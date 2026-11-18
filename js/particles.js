@@ -11,16 +11,16 @@
 
      portrait  hero       — you
      embed     about      — embedding space: new points are pulled into semantic clusters
-     flow      founder    — full-stack data flow: requests down client → API → AI → data, responses up
+     product   founder    — Keskur's AI document platform: capture on the phone → AI core → auto-organised stacks
      agents    experience — multi-agent orchestration: tasks out, results back, hand-offs
-     surface   lab        — a wave floor under the project cards, rolling with the scroll
+     calm      lab        — quiet deep-space drift; the project cards carry their own live models
      rag       archive    — retrieval: query beam → top-k chunks fly out → answer forms
      nnet      stack      — deep network: activations stream layer to layer, forward-pass wave
      globe     wins       — rotating lat/long globe with a scanning band
      descent   education  — gradient descent: the optimiser spirals to the loss minimum
      hello     contact    — the dots write "hello."
 
-   Transitions rotate between four styles: scan rebuild · radial burst · wave wipe · vortex.
+   Transitions alternate between a radial burst and a vortex.
    ========================================================= */
 (function () {
   const AS = (window.AS = window.AS || {});
@@ -188,10 +188,15 @@
           for (let t = 0; t < linkDots; t++) { const u = t / (linkDots - 1); put(f, a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u, 0.3, 0.014, 0.5, 2 + u * 0.999, 0, 0, 0); }
         });
         const drift = Math.floor(COUNT * 0.16), members = COUNT - f.n - drift;
-        const g = (i, s2) => (hash(i * 3.1 + s2) + hash(i * 5.7 + s2 * 2.3) + hash(i * 7.3 + s2 * 4.1) - 1.5) * 0.4;
-        for (let i = 0; i < members; i++) {
-          const k = i % K, c = C[k];
-          put(f, c[0] + g(i, 1), c[1] + g(i, 2), c[2] + g(i, 3), 0.8, 0.02, k === 2 ? 1 : (k % 3 === 0 ? 0.5 : 0.05), -1, c[0], c[1], c[2]);
+        const per = Math.floor(members / K), gg = Math.PI * (3 - Math.sqrt(5));
+        for (let k = 0; k < K; k++) {
+          const c = C[k], n = k === K - 1 ? members - per * (K - 1) : per, shell = Math.floor(n * 0.78);
+          for (let i = 0; i < n; i++) {
+            let x, y, z, a, sz;
+            if (i < shell) { const yy = 1 - ((i + 0.5) / shell) * 2, r = Math.sqrt(1 - yy * yy), t = i * gg; x = Math.cos(t) * r * 0.34; y = yy * 0.34; z = Math.sin(t) * r * 0.34; a = 0.75; sz = 0.019; }
+            else { const r = Math.cbrt(hash(i * 3.3 + k)) * 0.2, t = hash(i * 5.1 + k) * TAU, ph2 = Math.acos(2 * hash(i * 7.7 + k) - 1); x = Math.sin(ph2) * Math.cos(t) * r; y = Math.cos(ph2) * r; z = Math.sin(ph2) * Math.sin(t) * r; a = 0.95; sz = 0.024; }
+            put(f, c[0] + x, c[1] + y, c[2] + z, a, sz, k === 2 ? 1 : (k % 3 === 0 ? 0.5 : 0.08), -1, c[0], c[1], c[2]);
+          }
         }
         for (let i = 0; f.n < COUNT; i++) {
           const c = C[i % K], th = hash(i * 1.7) * TAU, ph = Math.acos(2 * hash(i * 2.9) - 1), r = 2.3 + hash(i * 4.1) * 0.9;
@@ -200,25 +205,79 @@
         return f;
       },
 
-      /* ---- flow: four layers of the product (client · API · AI/workers · data); packets stream through them.
-              plates: sig −1 · requests (down): sig [0,1) · responses (up): sig [2,3) */
-      flow() {
-        const f = blank(), side = 2.7, ys = [1.5, 0.5, -0.5, -1.5], border = mobile ? 24 : 56, g = mobile ? 8 : 17;
-        ys.forEach((y, pi) => {
-          [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]].forEach(([ax, az, bx, bz]) =>
-            line(f, ax * side / 2, y, az * side / 2, bx * side / 2, y, bz * side / 2, border, 0.9, 0.022, 0.5, undefined, undefined, [pi / 3, 0, 0]));
-          for (let r = 0; r < g; r++) for (let c = 0; c < g; c++)
-            put(f, (c / (g - 1) - 0.5) * side * 0.9, y, (r / (g - 1) - 0.5) * side * 0.9, 0.24, 0.015, 0.1, -1, pi / 3, 0, 0);
-        });
-        const trail = mobile ? 9 : 15, lanes = Math.floor((COUNT - f.n) / trail);
-        for (let l = 0; l < lanes; l++) {
-          const x = (hash(l * 3.3) - 0.5) * side * 0.82, z = (hash(l * 7.7) - 0.5) * side * 0.82, up = l % 3 === 0, ph = hash(l * 11.1);
-          for (let j = 0; j < trail; j++)
-            put(f, x, 0, z, 0.95 * (1 - j / trail), 0.025 - j * 0.0009, up ? 0.5 : 0.92, (up ? 2 : 0) + (((ph - j * 0.005) % 1) + 1) % 1 * 0.999, 0, 0, 0);
+      /* ---- product: Keskur's AI document platform — documents scroll up a phone, fly through the AI core,
+              and land in auto-organised stacks. aux.z role: 0 static · 1 scrolling card (aux.x = base y)
+              · 2 flying document (aux.x = target stack, sig = phase, pos = glyph offset) · 3 AI core */
+      product() {
+        const f = blank(), q = COUNT / 9300;
+        const px = -1.45, py = -0.05, pw = 1.05, ph = 2.1, rr = 0.14;
+        // phone outline (rounded rectangle), notch and home bar
+        const outN = Math.round(380 * q);
+        const per = 2 * (pw - 2 * rr) + 2 * (ph - 2 * rr) + TAU * rr;
+        for (let i = 0; i < outN; i++) {
+          let d = (i / outN) * per, x, y;
+          const sw = pw - 2 * rr, sh = ph - 2 * rr, arc = (Math.PI / 2) * rr;
+          const segs = [sw, arc, sh, arc, sw, arc, sh, arc];
+          let k = 0; while (k < 7 && d > segs[k]) { d -= segs[k]; k++; }
+          const hx = pw / 2 - rr, hy = ph / 2 - rr;
+          if (k === 0) { x = -hx + d; y = ph / 2; }
+          else if (k === 2) { x = pw / 2; y = hy - d; }
+          else if (k === 4) { x = hx - d; y = -ph / 2; }
+          else if (k === 6) { x = -pw / 2; y = -hy + d; }
+          else { const cs = [[hx, hy, Math.PI / 2], [hx, -hy, 0], [-hx, -hy, -Math.PI / 2], [-hx, hy, Math.PI]][(k - 1) / 2]; const a = cs[2] - d / rr; x = cs[0] + Math.cos(a) * rr; y = cs[1] + Math.sin(a) * rr; }
+          put(f, px + x, py + y, 0, 0.95, 0.022, 0.5, -1, 0, 0, 0);
         }
-        while (f.n < COUNT) put(f, 0, 0, 0, 0, 0.01, 0, -1, 0, 0, 0);
+        line(f, px - 0.14, py + ph / 2 - 0.08, 0, px + 0.14, py + ph / 2 - 0.08, 0, Math.round(16 * q) + 4, 0.9, 0.02, 0.5, undefined, undefined, [0, 0, 0]);
+        line(f, px - 0.18, py - ph / 2 + 0.07, 0, px + 0.18, py - ph / 2 + 0.07, 0, Math.round(18 * q) + 4, 0.7, 0.018, 0.3, undefined, undefined, [0, 0, 0]);
+        // document cards scrolling up the screen
+        const cards = 5, cw = 0.8, chh = 0.3;
+        for (let k = 0; k < cards; k++) {
+          const base = -1.05 + k * 0.42, cx = px, ry = (dx, dy) => [cx + dx, py + base + dy];
+          const edge = Math.round(26 * q) + 6;
+          [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]].forEach(([ax, ay, bx, by], e) => {
+            const n = e % 2 ? Math.round(edge * 0.4) : edge;
+            for (let t = 0; t < n; t++) { const u = t / n; const [x, y] = ry((ax + (bx - ax) * u) * cw / 2, (ay + (by - ay) * u) * chh / 2); put(f, x, y, 0, 0.75, 0.018, 0.4, -1, py + base, 0, 1); }
+          });
+          for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) { const [x, y] = ry(-cw / 2 + 0.06 + c * 0.03, chh / 2 - 0.07 - r * 0.03); put(f, x, y, 0, 0.95, 0.02, k % 2 ? 0.5 : 1, -1, py + base, 0, 1); }
+          [0.46, 0.38, 0.24].forEach((len, li) => {
+            const n = Math.round(len / 0.028);
+            for (let t = 0; t < n; t++) { const [x, y] = ry(-cw / 2 + 0.2 + t * 0.028, chh / 2 - 0.08 - li * 0.075); put(f, x, y, 0, li ? 0.5 : 0.85, 0.016, 0.05, -1, py + base, 0, 1); }
+          });
+        }
+        // AI core: a dot sphere with two thin orbits
+        const fib = (n, r, cx, cy, cz, cb) => { const gg = Math.PI * (3 - Math.sqrt(5)); for (let i = 0; i < n; i++) { const y = 1 - ((i + 0.5) / n) * 2, r2 = Math.sqrt(1 - y * y), a = i * gg; cb(cx + Math.cos(a) * r2 * r, cy + y * r, cz + Math.sin(a) * r2 * r); } };
+        fib(Math.round(1100 * q), 0.38, 0.15, 1.0, 0, (x, y, z) => put(f, x, y, z, 0.9, 0.02, 0.85, -1, 0, 0, 3));
+        const orbN = Math.round(140 * q);
+        for (let o = 0; o < 2; o++) for (let i = 0; i < orbN; i++) { const a = (i / orbN) * TAU, tilt = o ? 1.1 : -0.7; put(f, 0.15 + Math.cos(a) * 0.62, 1.0 + Math.sin(a) * 0.62 * Math.sin(tilt) * 0.4, Math.sin(a) * 0.62 * Math.cos(tilt), 0.35, 0.014, 0.5, -1, 0, 0, 3); }
+        // three auto-organised stacks of documents
+        for (let k = 0; k < 3; k++) for (let d = 0; d < 5; d++) {
+          const sx = 0.95 + k * 0.62, sy = -0.95 + d * 0.085, w = 0.44, hh = 0.3, n = Math.round(22 * q) + 6, tone = [0.05, 0.5, 0.95][k];
+          [[-1, -1, 1, -1], [1, -1, 1, 1], [1, 1, -1, 1], [-1, 1, -1, -1]].forEach(([ax, ay, bx, by], e) => {
+            const m = e % 2 ? Math.round(n * 0.6) : n;
+            for (let t = 0; t < m; t++) { const u = t / m; put(f, sx + (ax + (bx - ax) * u) * w / 2, sy + (ay + (by - ay) * u) * hh / 2 * 0.35, -d * 0.02, d === 4 ? 0.95 : 0.45, 0.018, tone, -1, 0, 0, 0); }
+          });
+        }
+        // documents in flight: tiny glyphs travelling phone → AI core → stack
+        const glyph = [];
+        for (let t = 0; t < 8; t++) { const u = t / 8; glyph.push([-0.08 + u * 0.16, 0.1]); glyph.push([-0.08 + u * 0.16, -0.1]); }
+        for (let t = 1; t < 7; t++) { const u = t / 7; glyph.push([-0.08, -0.1 + u * 0.2]); glyph.push([0.08, -0.1 + u * 0.2]); }
+        for (let t = 0; t < 5; t++) { glyph.push([-0.05 + t * 0.022, 0.04]); glyph.push([-0.05 + t * 0.018, -0.01]); }
+        const reserve = Math.round(1400 * q);
+        const flyN = Math.max(6, Math.floor((COUNT - f.n - reserve) / glyph.length));
+        for (let d = 0; d < flyN; d++) {
+          const ph = d / flyN, k = d % 3;
+          glyph.forEach(([gx, gy]) => put(f, gx, gy, 0, 0.95, 0.019, 0.6, ph, k, 0, 2));
+        }
+        // the rest: a faint grid filling the phone screen
+        const gx = Math.max(6, Math.round(Math.sqrt((COUNT - f.n) * (pw / ph)))), gy = Math.max(6, Math.floor((COUNT - f.n) / gx));
+        for (let r = 0; r < gy && f.n < COUNT; r++) for (let c = 0; c < gx && f.n < COUNT; c++)
+          put(f, px + (c / (gx - 1) - 0.5) * (pw - 0.14), py + (r / (gy - 1) - 0.5) * (ph - 0.3), -0.02, 0.07, 0.012, 0.3, -1, 0, 0, 0);
+        while (f.n < COUNT) put(f, px, py, 0, 0, 0.01, 0, -1, 0, 0, 0);
         return f;
       },
+
+      /* ---- calm: deep-space drift behind the Lab, whose cards carry their own live models */
+      calm() { return GEN.scatter(); },
 
       /* ---- agents: an orchestrator, six orbiting agents, and the traffic between them.
               aux = (agent k | −1 orchestrator, role 0 body · 1 orbit path · 2 message · 3 spare, direction 0 task · 1 result · 2 hand-off) */
@@ -300,16 +359,6 @@
         return f;
       },
 
-      /* ---- surface: a live 3D surface plot; heights are computed in the shader; aux = grid coordinates −1..1 */
-      surface() {
-        const f = blank(), N = Math.floor(Math.sqrt(COUNT)), S = 2.3, every = mobile ? 6 : 8;
-        for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
-          const gx = (c / (N - 1)) * 2 - 1, gz = (r / (N - 1)) * 2 - 1, gridLine = r % every === 0 || c % every === 0;
-          put(f, gx * S, 0, gz * S, gridLine ? 0.85 : 0.32, gridLine ? 0.022 : 0.016, 0, -1, gx, gz, gridLine ? 1 : 0);
-        }
-        return f;
-      },
-
       /* ---- field: regular dot matrix on the ground plane (fallback) */
       field() {
         const f = blank(), XH = Math.max(7.5, 15.5 * (window.innerWidth / window.innerHeight));
@@ -378,20 +427,20 @@
     // how each formation sits in the frame and moves. type selects its live animation in the shader.
     const CFG = {
       scatter:  { type: 10, side: 0, y: 0, scale: 1, yaw: 0, pitch: 0, spin: 0, sy: 0, mouse: 0.02, lit: 0, depth: 0, R: 6, sig: [0.05, 0.08, 1.2], settle: 0.6, label: 'SIGNAL · SCATTERED' },
-      portrait: { type: 1,  side: 1, y: 0.0,  scale: 1.0,  yaw: 0,     pitch: 0,    spin: 0,    sy: 0,    mouse: 0.07, lit: 0, depth: 0,    R: 2.4, sig: [0.10, 0.07, 0.55], settle: 1.0,  label: 'PORTRAIT · DOT MATRIX' },
+      portrait: { type: 1,  side: 1, y: 0.0,  scale: 1.0,  yaw: 0,     pitch: 0,    spin: 0,    sy: 0,    mouse: 0.07, lit: 0, depth: 0,    R: 2.4, sig: [0, 1, 0], settle: 1.0,  label: 'ABHISHEK BABU SHETTY' },
       embed:    { type: 20, side: 1, y: 0.0,  scale: 1.12, yaw: 0.3,   pitch: 0.22, spin: 0.35, sy: 2.2,  mouse: 0.08, lit: 0, depth: 0.55, R: 2.8, sig: [0, 1, 0], settle: 0.82, label: 'EMBEDDING SPACE · SEMANTIC CLUSTERS' },
-      flow:     { type: 21, side: 1, y: 0.0,  scale: 1.05, yaw: 0.62,  pitch: 0.38, spin: 0.2,  sy: 1.4,  mouse: 0.08, lit: 0, depth: 0.5,  R: 2.2, sig: [0, 1, 0], settle: 0.82, label: 'FULL-STACK DATA FLOW · CLIENT → API → AI → DATA' },
+      product:  { type: 26, side: 1, y: 0.6,  scale: 0.95, yaw: -0.22, pitch: 0.08, spin: 0,    sy: 0.5,  mouse: 0.06, lit: 0, depth: 0.2,  R: 2.0, sig: [0, 1, 0], settle: 0.9, label: 'KESKUR · CAPTURE → UNDERSTAND → AUTO-ORGANISE' },
       agents:   { type: 22, side: 1, y: 0.0,  scale: 1.0,  yaw: 0,     pitch: 0.48, spin: 0.08, sy: 1.0,  mouse: 0.08, lit: 0, depth: 0.55, R: 2.4, sig: [0, 1, 0], settle: 0.85, label: 'MULTI-AGENT ORCHESTRATION · TASKS ↔ RESULTS' },
-      surface:  { type: 14, side: 0, y: -2.75, scale: 2.7, yaw: 0,   pitch: 0.3,  spin: 0,    sy: 0,    mouse: 0.03, lit: 0, depth: 0.35, R: 6.0, sig: [0, 1, 0], settle: 0.9,  label: 'LOSS SURFACE · LIVE 3D PLOT', floor: true },
+      calm:     { type: 10, side: 0, y: 0, scale: 1, yaw: 0, pitch: 0, spin: 0, sy: 0, mouse: 0.02, lit: 0, depth: 0, R: 6, sig: [0.05, 0.08, 1.2], settle: 0.42, label: 'SELECTED WORK' },
       rag:      { type: 23, side: 1, y: 0.0,  scale: 1.05, yaw: -0.2,  pitch: 0.12, spin: 0.04, sy: 0.8,  mouse: 0.08, lit: 0, depth: 0.45, R: 2.2, sig: [0, 1, 0], settle: 0.85, label: 'RETRIEVAL-AUGMENTED GENERATION · QUERY → TOP-K → ANSWER' },
-      nnet:     { type: 24, side: 1, y: 0.0,  scale: 0.95, yaw: -0.8,  pitch: 0.28, spin: 0.06, sy: 1.1,  mouse: 0.08, lit: 0, depth: 0.5,  R: 2.8, sig: [0, 1, 0], settle: 0.8,  label: 'DEEP NEURAL NETWORK · FORWARD PASS' },
+      nnet:     { type: 24, side: 1, y: -0.2, scale: 1.05, yaw: -0.8,  pitch: 0.28, spin: 0.06, sy: 1.1,  mouse: 0.08, lit: 0, depth: 0.5,  R: 2.8, sig: [0, 1, 0], settle: 0.8,  label: 'DEEP NEURAL NETWORK · FORWARD PASS' },
       globe:    { type: 7,  side: 1, y: 0.05, scale: 1.0,  yaw: 0,     pitch: 0.3,  spin: 1,    sy: 1.5,  mouse: 0.1,  lit: 1, depth: 0,    R: 2.1, sig: [0.06, 0.30, 1.6], settle: 0.7, label: 'GLOBE · LAT / LONG SCAN' },
       descent:  { type: 25, side: 1, y: 0.1,  scale: 1.05, yaw: 0.3,   pitch: 0.55, spin: 0.08, sy: 1.2,  mouse: 0.08, lit: 0, depth: 0.4,  R: 2.6, sig: [0, 1, 0], settle: 0.85, label: 'GRADIENT DESCENT · FINDING THE MINIMUM' },
       field:    { type: 5, field: true, sig: [0, 1, 0], settle: 0.85, label: 'LOSS LANDSCAPE · CONTOURS' },
       hello:    { type: 9, side: 0, y: 0, scale: 0.95, yaw: 0, pitch: 0, spin: 0, sy: 0, mouse: 0.05, lit: 0, depth: 0, R: 4, sig: [0.12, 0.12, 0.7], settle: 0.9, label: 'HELLO', hello: true }
     };
-    // transition style used to arrive at each section: 0 scan · 1 radial burst · 2 wave wipe · 3 vortex
-    const TRANS_SEQ = [3, 0, 1, 3, 2, 1, 0, 3, 2, 1, 0, 3];
+    // transition style used to arrive at each section: 1 radial burst · 3 vortex
+    const TRANS_SEQ = [3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1];
 
     /* ================= sections → formations ================= */
     const sections = [...document.querySelectorAll('main section[data-shape]')];
@@ -513,27 +562,7 @@
 
           // ---- live animation per formation, in local coordinates
           if (abs(type - 1.0) < 0.5) {
-            // PORTRAIT: the scan line carries a digital glitch through the rows it passes
-            if (aux.y >= 0.0) {
-              float scanV = fract(T * sg.x) / 0.9;
-              float g = exp(-pow((aux.y - scanV) * 34.0, 2.0));
-              float band = step(0.5, fract(aux.y * 60.0 + T * 3.0));
-              p.x += g * 0.09 * (band * 2.0 - 1.0);
-              p.z += g * 0.35 + sin(T * 0.7 + aux.y * 7.0) * 0.025;
-              extra = g * 0.5;
-            }
-          } else if (abs(type - 14.0) < 0.5) {
-            // SURFACE: a wide wave floor under the Lab cards. Scrolling drives the waves forward,
-            // a ripple pulses from the centre, and peaks light up teal → lime.
-            float r = length(aux.xy) * 3.0;
-            float roll = sin(aux.y * 7.0 + uFly * 3.2 - T * 0.9) * 0.34;
-            float cross = sin(aux.x * 5.0 - uFly * 1.6 + T * 0.5) * cos(aux.y * 4.0 + T * 0.4) * 0.16;
-            float ripple = sin(r * 2.3 - T * 1.7 - uFly * 2.0) * exp(-r * 0.32) * 0.42;
-            float h = roll + cross + ripple;
-            p.y = h * 0.42;
-            tone = mix(0.04, 0.55, smoothstep(-0.35, 0.45, h));
-            extra = smoothstep(0.38, 0.7, h);
-            alpha *= (0.55 + smoothstep(-0.4, 0.5, h) * 0.75) * (1.0 - smoothstep(0.72, 1.0, max(abs(aux.x), abs(aux.y))));
+            // PORTRAIT: held still and clean
           } else if (abs(type - 20.0) < 0.5) {
             // EMBED: new points are pulled into their semantic cluster (clustering, live); links carry similarity pulses
             if (sig >= 2.0) {
@@ -548,20 +577,29 @@
             } else {
               p = aux + (p - aux) * (1.0 + 0.09 * sin(T * 0.9 + aux.x * 3.0 + aux.y * 2.0));
             }
-          } else if (abs(type - 21.0) < 0.5) {
-            // FLOW: requests stream down through client → API → AI → data; responses climb back; packets flare at each layer
-            if (sig >= 0.0) {
-              float up = step(1.5, sig);
-              float u = fract(fract(sig) + T * 0.16 + prog * 0.9);
-              float y = mix(1.7, -1.7, u) * (1.0 - 2.0 * up);
-              p.y = y;
-              p.x += sin(y * 4.0 + fract(sig) * 20.0) * 0.05;
-              float d = abs(fract(y - 0.5 + 0.5) - 0.5);
-              extra = exp(-d * d * 260.0);
-              alpha *= smoothstep(0.0, 0.05, u) * smoothstep(1.0, 0.95, u);
-            } else {
-              float wave = exp(-pow(fract(aux.x - T * 0.18) - 0.5, 2.0) * 50.0);
-              alpha *= 0.85 + wave * 0.5;
+          } else if (abs(type - 26.0) < 0.5) {
+            // PRODUCT: cards scroll up the phone; each document flies through the AI core and lands in its stack
+            if (aux.z > 0.5 && aux.z < 1.5) {
+              float yy = mod(aux.x + 0.05 + T * 0.12 + prog * 0.6 + 1.05, 2.1) - 1.05 - 0.05;
+              p.y += yy - aux.x;
+              float ry = p.y + 0.05;
+              alpha *= smoothstep(-0.98, -0.84, ry) * (1.0 - smoothstep(0.76, 0.94, ry));
+              extra = smoothstep(0.5, 0.85, ry) * 0.7;
+            } else if (aux.z > 1.5 && aux.z < 2.5) {
+              float u = fract(sig + T * 0.11 + prog * 0.6);
+              vec3 S = vec3(-1.45, 0.82, 0.0), A = vec3(0.15, 1.0, 0.25), E = vec3(0.95 + aux.x * 0.62, -0.5, 0.05);
+              vec3 C = 2.0 * A - 0.5 * (S + E);
+              vec3 b = (1.0 - u) * (1.0 - u) * S + 2.0 * u * (1.0 - u) * C + u * u * E;
+              float mid = exp(-pow((u - 0.5) * 6.0, 2.0));
+              p = b + p * (0.85 - mid * 0.55);
+              alpha *= smoothstep(0.0, 0.06, u) * (1.0 - smoothstep(0.92, 1.0, u));
+              extra = mid;
+              tone = mix(tone, 0.05 + aux.x * 0.45, smoothstep(0.6, 0.9, u));
+            } else if (aux.z > 2.5) {
+              vec3 c = vec3(0.15, 1.0, 0.0);
+              float beat = 0.5 + 0.5 * sin(T * 2.2);
+              p = c + (p - c) * (1.0 + 0.05 * beat);
+              extra = 0.2 + 0.35 * beat;
             }
           } else if (abs(type - 22.0) < 0.5) {
             // AGENTS: six agents orbit the orchestrator; tasks fly out, results fly back, agents hand off to each other
@@ -584,7 +622,7 @@
               alpha *= 0.8 + 0.2 * sin(T * 1.3 + sig * 30.0);
             } else if (aux.x < 1.5) {
               float e = smoothstep(0.38, 0.58, c) - smoothstep(0.82, 0.97, c);
-              vec3 off = vec3(h21(vec2(sig, 1.0)) - 0.5, h21(vec2(sig, 2.0)) - 0.5, h21(vec2(sig, 3.0)) - 0.5) * 0.6;
+              vec3 off = normalize(vec3(h21(vec2(sig, 1.0)) - 0.5, h21(vec2(sig, 2.0)) - 0.5, h21(vec2(sig, 3.0)) - 0.5) + vec3(0.0001)) * 0.36;
               p = mix(p, ans + off, e) + vec3(0.0, sin(e * 3.14159) * 0.6, 0.0);
               float flash = exp(-pow((c - 0.33) * 16.0, 2.0));
               extra = max(e * 0.9, flash);
@@ -758,7 +796,7 @@
       } else if (m) {
         x = 0; y = name === 'portrait' ? 1.25 : 0.9; scale = c.scale * Math.min(0.62, halfW / 3.6);
       } else {
-        x = c.side * halfW * (name === 'portrait' ? 0.56 : 0.5); y = c.y; scale = c.scale * Math.max(0.7, Math.min(1, halfW / 6.3));
+        x = c.side * halfW * (name === 'portrait' ? 0.56 : name === 'product' ? 0.63 : 0.5); y = c.y; scale = c.scale * Math.max(0.7, Math.min(1, halfW / 6.3));
       }
       cenU.value.set(x, y, 0);
       parU.value.set(scale, c.yaw + spin * c.spin + (prog || 0) * (c.sy || 0) + mouseNDC.x * c.mouse, c.pitch - mouseNDC.y * c.mouse * 0.6, 0);

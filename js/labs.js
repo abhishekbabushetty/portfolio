@@ -1,5 +1,5 @@
 /* =========================================================
-   THE LAB — every project carries an interactive model of its core idea.
+   THE LAB — each project card renders a small model of the project's core algorithm.
    Each viz: { setup(W,H), frame(t, dt), click?(x,y) } on a 2D canvas.
    ========================================================= */
 (function () {
@@ -90,7 +90,7 @@
           const below = o.y > H / 2;
           label(ctx, o.n, o.x, o.y + (below ? 22 : -22), i === hover ? ACC : ink(0.75), 11, 'center');
         });
-        label(ctx, 'model · agents hand off tasks to each other', 16, H - 18, ink(0.35), 10);
+        label(ctx, 'agents hand off tasks', 16, H - 18, ink(0.35), 10);
       }
     };
   }
@@ -147,7 +147,7 @@
           label(ctx, `${topics[p.c].slice(0, 6)}#${p.id}`, px + 12, py + 36 + k * 20, ink(0.75), 10);
           label(ctx, sim.toFixed(3), px + 144, py + 36 + k * 20, ACC, 10, 'right');
         });
-        label(ctx, 'model · nearest-neighbour search over embeddings', 16, H - 18, ink(0.35), 10);
+        label(ctx, 'top-k retrieval over embeddings', 16, H - 18, ink(0.35), 10);
       }
     };
   }
