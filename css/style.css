@@ -123,7 +123,8 @@ html.js #boot {
 }
 .vignette { position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0,0,0,0.35) 100%); }
 
-main { position: relative; z-index: 2; }
+main { position: relative; z-index: 2; overflow-x: hidden; overflow-x: clip; }
+html { overflow-x: hidden; }
 
 /* =========================================================
    CURSOR

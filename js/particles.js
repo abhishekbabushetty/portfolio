@@ -13,7 +13,7 @@
      embed     about      — embedding space: new points are pulled into semantic clusters
      product   founder    — Keskur's AI document platform: capture on the phone → AI core → auto-organised stacks
      agents    experience — multi-agent orchestration: tasks out, results back, hand-offs
-     calm      lab        — quiet deep-space drift; the project cards carry their own live models
+     surface   lab        — a wave floor under the project cards, rolling forward as you scroll
      rag       archive    — retrieval: query beam → top-k chunks fly out → answer forms
      nnet      stack      — deep network: activations stream layer to layer, forward-pass wave
      globe     wins       — rotating lat/long globe with a scanning band
@@ -276,6 +276,16 @@
         return f;
       },
 
+      /* ---- surface: a wide wave floor under the Lab cards; heights are computed in the shader; aux = grid coordinates −1..1 */
+      surface() {
+        const f = blank(), N = Math.floor(Math.sqrt(COUNT)), S = 2.3, every = mobile ? 6 : 8;
+        for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) {
+          const gx = (c / (N - 1)) * 2 - 1, gz = (r / (N - 1)) * 2 - 1, gridLine = r % every === 0 || c % every === 0;
+          put(f, gx * S, 0, gz * S, gridLine ? 0.85 : 0.32, gridLine ? 0.022 : 0.016, 0, -1, gx, gz, gridLine ? 1 : 0);
+        }
+        return f;
+      },
+
       /* ---- calm: deep-space drift behind the Lab, whose cards carry their own live models */
       calm() { return GEN.scatter(); },
 
@@ -428,14 +438,15 @@
     const CFG = {
       scatter:  { type: 10, side: 0, y: 0, scale: 1, yaw: 0, pitch: 0, spin: 0, sy: 0, mouse: 0.02, lit: 0, depth: 0, R: 6, sig: [0.05, 0.08, 1.2], settle: 0.6, label: 'SIGNAL · SCATTERED' },
       portrait: { type: 1,  side: 1, y: 0.0,  scale: 1.0,  yaw: 0,     pitch: 0,    spin: 0,    sy: 0,    mouse: 0.07, lit: 0, depth: 0,    R: 2.4, sig: [0, 1, 0], settle: 1.0,  label: 'ABHISHEK BABU SHETTY' },
-      embed:    { type: 20, side: 1, y: 0.0,  scale: 1.12, yaw: 0.3,   pitch: 0.22, spin: 0.35, sy: 2.2,  mouse: 0.08, lit: 0, depth: 0.55, R: 2.8, sig: [0, 1, 0], settle: 0.82, label: 'EMBEDDING SPACE · SEMANTIC CLUSTERS' },
-      product:  { type: 26, side: 1, y: 0.6,  scale: 0.95, yaw: -0.22, pitch: 0.08, spin: 0,    sy: 0.5,  mouse: 0.06, lit: 0, depth: 0.2,  R: 2.0, sig: [0, 1, 0], settle: 0.9, label: 'KESKUR · CAPTURE → UNDERSTAND → AUTO-ORGANISE' },
-      agents:   { type: 22, side: 1, y: 0.0,  scale: 1.0,  yaw: 0,     pitch: 0.48, spin: 0.08, sy: 1.0,  mouse: 0.08, lit: 0, depth: 0.55, R: 2.4, sig: [0, 1, 0], settle: 0.85, label: 'MULTI-AGENT ORCHESTRATION · TASKS ↔ RESULTS' },
+      embed:    { type: 20, mfit: 2.7, side: 1, y: 0.0,  scale: 1.12, yaw: 0.3,   pitch: 0.22, spin: 0.35, sy: 2.2,  mouse: 0.08, lit: 0, depth: 0.55, R: 2.8, sig: [0, 1, 0], settle: 0.82, label: 'EMBEDDING SPACE · SEMANTIC CLUSTERS' },
+      product:  { type: 26, mfit: 2.75, side: 1, y: 0.6,  scale: 0.95, yaw: -0.22, pitch: 0.08, spin: 0,    sy: 0.5,  mouse: 0.06, lit: 0, depth: 0.2,  R: 2.0, sig: [0, 1, 0], settle: 0.9, label: 'KESKUR · CAPTURE → UNDERSTAND → AUTO-ORGANISE' },
+      agents:   { type: 22, mfit: 2.6, side: 1, y: 0.0,  scale: 1.0,  yaw: 0,     pitch: 0.48, spin: 0.08, sy: 1.0,  mouse: 0.08, lit: 0, depth: 0.55, R: 2.4, sig: [0, 1, 0], settle: 0.85, label: 'MULTI-AGENT ORCHESTRATION · TASKS ↔ RESULTS' },
       calm:     { type: 10, side: 0, y: 0, scale: 1, yaw: 0, pitch: 0, spin: 0, sy: 0, mouse: 0.02, lit: 0, depth: 0, R: 6, sig: [0.05, 0.08, 1.2], settle: 0.42, label: 'SELECTED WORK' },
-      rag:      { type: 23, side: 1, y: 0.0,  scale: 1.05, yaw: -0.2,  pitch: 0.12, spin: 0.04, sy: 0.8,  mouse: 0.08, lit: 0, depth: 0.45, R: 2.2, sig: [0, 1, 0], settle: 0.85, label: 'RETRIEVAL-AUGMENTED GENERATION · QUERY → TOP-K → ANSWER' },
-      nnet:     { type: 24, side: 1, y: -0.2, scale: 1.05, yaw: -0.8,  pitch: 0.28, spin: 0.06, sy: 1.1,  mouse: 0.08, lit: 0, depth: 0.5,  R: 2.8, sig: [0, 1, 0], settle: 0.8,  label: 'DEEP NEURAL NETWORK · FORWARD PASS' },
-      globe:    { type: 7,  side: 1, y: 0.05, scale: 1.0,  yaw: 0,     pitch: 0.3,  spin: 1,    sy: 1.5,  mouse: 0.1,  lit: 1, depth: 0,    R: 2.1, sig: [0.06, 0.30, 1.6], settle: 0.7, label: 'GLOBE · LAT / LONG SCAN' },
-      descent:  { type: 25, side: 1, y: 0.1,  scale: 1.05, yaw: 0.3,   pitch: 0.55, spin: 0.08, sy: 1.2,  mouse: 0.08, lit: 0, depth: 0.4,  R: 2.6, sig: [0, 1, 0], settle: 0.85, label: 'GRADIENT DESCENT · FINDING THE MINIMUM' },
+      surface:  { type: 14, side: 0, y: -2.75, scale: 2.7, yaw: 0, pitch: 0.3, spin: 0, sy: 0, mouse: 0.03, lit: 0, depth: 0.35, R: 6.0, sig: [0, 1, 0], settle: 0.9, label: 'SELECTED WORK', floor: true },
+      rag:      { type: 23, mfit: 3.0, side: 1, y: 0.0,  scale: 1.05, yaw: -0.2,  pitch: 0.12, spin: 0.04, sy: 0.8,  mouse: 0.08, lit: 0, depth: 0.45, R: 2.2, sig: [0, 1, 0], settle: 0.85, label: 'RETRIEVAL-AUGMENTED GENERATION · QUERY → TOP-K → ANSWER' },
+      nnet:     { type: 24, mfit: 3.0, side: 1, y: -0.2, scale: 1.05, yaw: -0.8,  pitch: 0.28, spin: 0.06, sy: 1.1,  mouse: 0.08, lit: 0, depth: 0.5,  R: 2.8, sig: [0, 1, 0], settle: 0.8,  label: 'DEEP NEURAL NETWORK · FORWARD PASS' },
+      globe:    { type: 7, mfit: 3.3,  side: 1, y: 0.05, scale: 1.0,  yaw: 0,     pitch: 0.3,  spin: 1,    sy: 1.5,  mouse: 0.1,  lit: 1, depth: 0,    R: 2.1, sig: [0.06, 0.30, 1.6], settle: 0.7, label: 'GLOBE · LAT / LONG SCAN' },
+      descent:  { type: 25, mfit: 2.7, side: 1, y: 0.1,  scale: 1.05, yaw: 0.3,   pitch: 0.55, spin: 0.08, sy: 1.2,  mouse: 0.08, lit: 0, depth: 0.4,  R: 2.6, sig: [0, 1, 0], settle: 0.85, label: 'GRADIENT DESCENT · FINDING THE MINIMUM' },
       field:    { type: 5, field: true, sig: [0, 1, 0], settle: 0.85, label: 'LOSS LANDSCAPE · CONTOURS' },
       hello:    { type: 9, side: 0, y: 0, scale: 0.95, yaw: 0, pitch: 0, spin: 0, sy: 0, mouse: 0.05, lit: 0, depth: 0, R: 4, sig: [0.12, 0.12, 0.7], settle: 0.9, label: 'HELLO', hello: true }
     };
@@ -563,6 +574,18 @@
           // ---- live animation per formation, in local coordinates
           if (abs(type - 1.0) < 0.5) {
             // PORTRAIT: held still and clean
+          } else if (abs(type - 14.0) < 0.5) {
+            // SURFACE: a wave floor under the Lab cards — scrolling drives the waves forward,
+            // a ripple pulses from the centre, and peaks light up teal → lime
+            float r = length(aux.xy) * 3.0;
+            float roll = sin(aux.y * 7.0 + uFly * 3.2 - T * 0.9) * 0.34;
+            float cross = sin(aux.x * 5.0 - uFly * 1.6 + T * 0.5) * cos(aux.y * 4.0 + T * 0.4) * 0.16;
+            float ripple = sin(r * 2.3 - T * 1.7 - uFly * 2.0) * exp(-r * 0.32) * 0.42;
+            float h = roll + cross + ripple;
+            p.y = h * 0.42;
+            tone = mix(0.04, 0.55, smoothstep(-0.35, 0.45, h));
+            extra = smoothstep(0.38, 0.7, h);
+            alpha *= (0.55 + smoothstep(-0.4, 0.5, h) * 0.75) * (1.0 - smoothstep(0.72, 1.0, max(abs(aux.x), abs(aux.y))));
           } else if (abs(type - 20.0) < 0.5) {
             // EMBED: new points are pulled into their semantic cluster (clustering, live); links carry similarity pulses
             if (sig >= 2.0) {
@@ -794,7 +817,11 @@
       else if (c.hello) {
         if (m) { x = 0; y = -2.6; scale = Math.min(0.42, window.innerWidth / 900); } else { x = 3.0; y = 1.15; scale = 0.95; }
       } else if (m) {
-        x = 0; y = name === 'portrait' ? 1.25 : 0.9; scale = c.scale * Math.min(0.62, halfW / 3.6);
+        // phones: the face sits in the open space above the name; other shapes centre on screen,
+        // each scaled to fit the narrow width (mfit = the shape's half-width in its own units)
+        x = 0;
+        if (name === 'portrait') { y = 1.5; scale = c.scale * Math.min(0.66, halfW / 3.35); }
+        else { y = 0.55; scale = c.scale * Math.min(0.85, halfW / (c.mfit || 3.6)); }
       } else {
         x = c.side * halfW * (name === 'portrait' ? 0.56 : name === 'product' ? 0.63 : 0.5); y = c.y; scale = c.scale * Math.max(0.7, Math.min(1, halfW / 6.3));
       }
@@ -975,7 +1002,9 @@
 
       const cA = cfgOf(sideA), cB = cfgOf(sideB);
       const settle = cA.settle + (cB.settle - cA.settle) * m;
-      const mobileK = isMobile() ? 0.62 : 1;
+      // on phones text runs full-width over the shapes, so they sit back further (the face stays bright)
+      const mk = (n) => (n === 'portrait' ? 0.9 : n === 'hello' ? 0.12 : 0.32);
+      const mobileK = isMobile() ? mk(sideA) + (mk(sideB) - mk(sideA)) * m : 1;
       const targetO = revealed ? Math.max(settle * mobileK, introDone ? Math.sin(m * Math.PI) * 0.95 : 0) : 0;
       const k = 1 - Math.pow(0.002, dt);
       opacity += (targetO - opacity) * k;

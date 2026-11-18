@@ -74,7 +74,7 @@
           cats.forEach((c, i) => {
             const a = (i / cats.length) * Math.PI * 2;
             const hub = byName[c];
-            hub.x = W / 2 + Math.cos(a) * W * 0.28; hub.y = H / 2 + Math.sin(a) * H * 0.3;
+            hub.x = W / 2 + Math.cos(a) * W * 0.3; hub.y = H / 2 + Math.sin(a) * H * 0.34;
           });
           nodes.forEach((n) => { if (!n.hub) { const h = byName[n.cat]; n.x = h.x + (Math.random() - 0.5) * 80; n.y = h.y + (Math.random() - 0.5) * 80; } });
         }
@@ -110,7 +110,7 @@
 
       function sim() {
         const cx = W / 2, cy = H / 2;
-        const scale = Math.min(1.25, Math.max(0.6, W / 1100));
+        const scale = Math.min(1.25, Math.max(0.5, Math.sqrt(W * H) / 820));
         for (let i = 0; i < nodes.length; i++) {
           const a = nodes[i];
           for (let j = i + 1; j < nodes.length; j++) {
@@ -131,8 +131,8 @@
         }
         const t = performance.now() / 1000;
         for (const n of nodes) {
-          n.vx += (cx - n.x) * 0.0016 * alpha * (n.hub ? 2 : 1);
-          n.vy += (cy - n.y) * 0.0022 * alpha * (n.hub ? 2 : 1);
+          n.vx += (cx - n.x) * 0.0019 * Math.min(2.2, Math.max(0.7, H / W)) * alpha * (n.hub ? 2 : 1);
+          n.vy += (cy - n.y) * 0.0019 * Math.min(2.2, Math.max(0.45, W / H)) * alpha * (n.hub ? 2 : 1);
           if (!reduced) { n.vx += Math.sin(t * 0.7 + n.x * 0.01) * 0.02; n.vy += Math.cos(t * 0.6 + n.y * 0.01) * 0.02; }
           if (n === drag) continue;
           n.vx *= 0.82; n.vy *= 0.82;
@@ -169,14 +169,14 @@
             ctx.fillStyle = isH ? '#c8f542' : '#0d1013';
             ctx.strokeStyle = '#c8f542'; ctx.lineWidth = 1.5;
             ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 7); ctx.fill(); ctx.stroke();
-            ctx.font = `600 13px ${SANS}`; ctx.fillStyle = '#eef1ee'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+            ctx.font = `600 ${W < 520 ? 11 : 13}px ${SANS}`; ctx.fillStyle = '#eef1ee'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
             ctx.fillText(n.label, n.x, n.y + n.r + 16);
-            ctx.fillStyle = isH ? '#0b0c05' : '#c8f542'; ctx.font = `11px ${MONO}`;
+            ctx.fillStyle = isH ? '#0b0c05' : '#c8f542'; ctx.font = `${W < 520 ? 9 : 11}px ${MONO}`;
             ctx.fillText(String(n.deg), n.x, n.y + 1);
           } else {
             ctx.fillStyle = isH ? '#c8f542' : hover && on ? '#c8f542' : '#eef1ee';
             ctx.beginPath(); ctx.arc(n.x, n.y, isH ? n.r + 3 : n.r, 0, 7); ctx.fill();
-            ctx.font = `11px ${MONO}`; ctx.fillStyle = on ? 'rgba(238,241,238,0.82)' : 'rgba(238,241,238,0.5)';
+            ctx.font = `${W < 520 ? 9 : 11}px ${MONO}`; ctx.fillStyle = on ? 'rgba(238,241,238,0.82)' : 'rgba(238,241,238,0.5)';
             ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
             ctx.fillText(n.label, n.x + n.r + 6, n.y);
           }
