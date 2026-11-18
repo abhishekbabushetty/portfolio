@@ -1,589 +1,684 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek B Shetty | AI/ML Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhishek Babu Shetty — Co-Founder &amp; Principal Engineer, Keskur Technologies</title>
+<meta name="description" content="Abhishek Babu Shetty — Co-Founder &amp; Principal Engineer at Keskur Technologies, where he built the entire product from scratch: web, backend, Android and iOS. Agentic AI, RAG, voice and vision systems. 20+ systems shipped, 6× national competition winner.">
+<meta name="theme-color" content="#07090b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abhishek Babu Shetty — Co-Founder &amp; Principal Engineer, Keskur Technologies">
+<meta property="og:description" content="Co-founder who built Keskur Technologies end to end — web, backend, Android, iOS, AI. 20+ systems shipped. 6× national winner.">
+<meta property="og:url" content="https://abhishekbabushetty.github.io/portfolio/">
+<meta property="og:image" content="https://abhishekbabushetty.github.io/portfolio/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Abhishek Babu Shetty — Co-Founder &amp; Principal Engineer, Keskur Technologies">
+<meta property="og:site_name" content="Abhishek Babu Shetty">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Abhishek Babu Shetty — Co-Founder &amp; Principal Engineer, Keskur Technologies">
+<meta name="twitter:description" content="Built Keskur's entire product from scratch — web, backend, Android, iOS and AI. 20+ systems built. 6× national winner.">
+<meta name="twitter:image" content="https://abhishekbabushetty.github.io/portfolio/assets/og-image.png">
+<meta name="author" content="Abhishek Babu Shetty">
+<link rel="canonical" href="https://abhishekbabushetty.github.io/portfolio/">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abhishek Babu Shetty",
+  "jobTitle": "Co-Founder & Principal Engineer",
+  "worksFor": { "@type": "Organization", "name": "Keskur Technologies" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressCountry": "IN" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Kalasalingam Academy of Research and Education" },
+  "url": "https://abhishekbabushetty.github.io/portfolio/",
+  "image": "https://abhishekbabushetty.github.io/portfolio/assets/og-image.png",
+  "sameAs": ["https://github.com/abhishekbabushetty", "https://www.linkedin.com/in/abhishek-babu-shetty/"],
+  "knowsAbout": ["Agentic AI", "Multi-agent systems", "Retrieval-augmented generation", "Computer vision", "Voice AI", "FastAPI", "React", "React Native", "Next.js", "PyTorch"]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307090b'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='%23c8f542' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23c8f542'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=37">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#" class="logo">ABHI<span>SHEK</span></a>
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <canvas id="particle-canvas"></canvas>
-        <div class="bg-shape shape-1"></div>
-        <div class="bg-shape shape-2"></div>
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-subtitle">Hi, I am</span>
-                <h1 class="hero-title">Abhishek B Shetty <span>AI/ML Engineer</span></h1>
-                <p class="hero-description">
-                    Building scalable backends, context-aware agents, and intelligent automation pipelines. 
-                    Specializing in Python, FastAPI, React, Machine Learning, Deep Learning, Advanced LLMs.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I am an AI/ML Engineer with 2 years of experience in Python, developing full-stack AI systems integrating FastAPI, SQL, React, and LangChain with advanced LLMs and deep learning models.
-                    </p>
-                    <p>
-                        My expertise lies in building scalable backends, context-aware agents, and intelligent automation pipelines. I have been recognized for delivering innovative, high-performance, human-centric AI solutions across multiple domains, winning 6 national technical competitions.
-                    </p>
-                </div>
-                <div class="stats-container">
-                    <div class="glass-card stat-card">
-                        <span class="stat-number">2</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="glass-card stat-card">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Projects Built</span>
-                    </div>
-                    <div class="glass-card stat-card">
-                        <span class="stat-number">6</span>
-                        <span class="stat-label">National Wins</span>
-                    </div>
-                    <div class="glass-card stat-card">
-                        <span class="stat-number">9.11</span>
-                        <span class="stat-label">CGPA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">Education Journey</h2>
-            <div class="education-timeline">
-                <!-- B.Tech -->
-                <div class="education-card-modern">
-                    <div class="edu-timeline-dot"></div>
-                    <div class="edu-card-content">
-                        <div class="edu-header">
-                            <div class="edu-icon-modern">
-                                <i class="fa-solid fa-graduation-cap"></i>
-                            </div>
-                            <div class="edu-year-badge">2022 - 2026</div>
-                        </div>
-                        <div class="edu-info">
-                            <h3>Bachelor of Technology</h3>
-                            <h4>Computer Science & Engineering (AI & ML)</h4>
-                            <p class="edu-institution">
-                                <i class="fa-solid fa-building-columns"></i>
-                                Kalasalingam Academy of Research and Education
-                            </p>
-                            <div class="edu-achievements">
-                                <div class="achievement-badge cgpa-badge">
-                                    <span class="badge-label">CGPA</span>
-                                    <span class="badge-value">9.11</span>
-                                </div>
-                                <div class="achievement-badge highlight-badge">
-                                    <i class="fa-solid fa-star"></i>
-                                    <span>Specialization in AI/ML</span>
-                                </div>
-                            </div>
-                            <div class="edu-highlights">
-                                <div class="highlight-item">
-                                    <i class="fa-solid fa-trophy"></i>
-                                    <span>6 National Competition Wins</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fa-solid fa-code"></i>
-                                    <span>10+ AI/ML Projects</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Intermediate -->
-                <div class="education-card-modern">
-                    <div class="edu-timeline-dot"></div>
-                    <div class="edu-card-content">
-                        <div class="edu-header">
-                            <div class="edu-icon-modern secondary">
-                                <i class="fa-solid fa-book-open"></i>
-                            </div>
-                            <div class="edu-year-badge">2020 - 2022</div>
-                        </div>
-                        <div class="edu-info">
-                            <h3>Intermediate Education</h3>
-                            <h4>Science Stream (MPC)</h4>
-                            <p class="edu-institution">
-                                <i class="fa-solid fa-building"></i>
-                                Sri Chaitanya Junior Kalasala
-                            </p>
-                            <div class="edu-achievements">
-                                <div class="achievement-badge percentage-badge">
-                                    <span class="badge-label">Score</span>
-                                    <span class="badge-value">96.3%</span>
-                                </div>
-                                <div class="achievement-badge highlight-badge">
-                                    <i class="fa-solid fa-medal"></i>
-                                    <span>Top Performer</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secondary School -->
-                <div class="education-card-modern">
-                    <div class="edu-timeline-dot"></div>
-                    <div class="edu-card-content">
-                        <div class="edu-header">
-                            <div class="edu-icon-modern tertiary">
-                                <i class="fa-solid fa-school"></i>
-                            </div>
-                            <div class="edu-year-badge">2020</div>
-                        </div>
-                        <div class="edu-info">
-                            <h3>Secondary School Education</h3>
-                            <h4>Class X - Telangana State Board</h4>
-                            <p class="edu-institution">
-                                <i class="fa-solid fa-school-flag"></i>
-                                Krishnaveni Talent School
-                            </p>
-                            <div class="edu-achievements">
-                                <div class="achievement-badge perfect-badge">
-                                    <span class="badge-label">CGPA</span>
-                                    <span class="badge-value">10.0</span>
-                                </div>
-                                <div class="achievement-badge highlight-badge">
-                                    <i class="fa-solid fa-award"></i>
-                                    <span>Perfect Score</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-container">
-                <!-- Languages -->
-                <div class="glass-card skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">JavaScript</span>
-                    </div>
-                </div>
-                
-                <!-- Frameworks -->
-                <div class="glass-card skill-category">
-                    <h3>Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express.js</span>
-                        <span class="skill-tag">FastAPI</span>
-                    </div>
-                </div>
-
-                <!-- Agentic AI & GenAI -->
-                <div class="glass-card skill-category">
-                    <h3>Agentic AI & GenAI</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Agentic Frameworks</span>
-                        <span class="skill-tag">CrewAI</span>
-                        <span class="skill-tag">LangGraph</span>
-                        <span class="skill-tag">AutoGen</span>
-                        <span class="skill-tag">Multi-agent Workflows</span>
-                        <span class="skill-tag">RAG Systems</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">Conversational AI</span>
-                        <span class="skill-tag">Twilio Voice Agents</span>
-                    </div>
-                </div>
-
-                <!-- Core AI & Computer Vision -->
-                <div class="glass-card skill-category">
-                    <h3>Core AI & Computer Vision</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Model Quantization & Optimization</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">YOLOv8</span>
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                    </div>
-                </div>
-
-                <!-- Databases -->
-                <div class="glass-card skill-category">
-                    <h3>Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Supabase Auth & Storage</span>
-                        <span class="skill-tag">Vector Search (FAISS)</span>
-                    </div>
-                </div>
-
-                <!-- Tools -->
-                <div class="glass-card skill-category">
-                    <h3>DevOps & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">LangSmith</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">GCP</span>
-                        <span class="skill-tag">VS Code</span>
-                    </div>
-                </div>
-
-                <!-- Leadership & Soft Skills -->
-                <div class="glass-card skill-category">
-                    <h3>Leadership & Soft Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Team Leadership</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Public Speaking</span>
-                        <span class="skill-tag">Mentoring</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Event Management</span>
-                        <span class="skill-tag">Agile Methodology</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-           
-
-            <div class="timeline">
-                  <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <span class="timeline-date">Apr 2026 - Present</span>
-    <h3 class="timeline-title">Full Stack AI Engineer</h3>
-    <p class="timeline-company">Keskur Technologies</p>
-    <p class="timeline-tech">
-        <strong>Tech:</strong> React Native, Next.js, FastAPI, PostgreSQL, Redis, Celery, Firebase, AWS/GCP, Vector DBs
-    </p>
-    <ul class="timeline-list">
-        <li>Built a <strong>cross-platform AI document system</strong> (mobile + web) enabling paperless workflows, secure storage, and automated lifecycle management.</li>
-        <li>Led <strong>end-to-end development</strong> across React Native app, Next.js web platform, FastAPI backend, and cloud deployment.</li>
-        <li>Implemented <strong>asynchronous processing</strong> using Celery + Redis for file ingestion, background jobs, and workflow automation.</li>
-        <li>Developed <strong>semantic search and auto-organization</strong> using vector embeddings to eliminate duplication and improve retrieval.</li>
-        <li>Built <strong>real-time notifications and secure sharing</strong> with Firebase and fine-grained access control for multi-user environments.</li>
-    </ul>
+<!-- ============ BOOT SEQUENCE ============ -->
+<div id="boot" aria-hidden="true">
+  <div class="boot__grid"></div>
+  <div class="boot__log mono" id="bootLog"></div>
+  <div class="boot__bottom">
+    <div class="boot__name">ABHISHEK<span>.OS</span><small class="mono">v2026.11 · neural core</small></div>
+    <div class="boot__count" id="bootCount">000</div>
+  </div>
+  <div class="boot__bar"><i id="bootBar"></i></div>
+  <div class="boot__skip mono">click or press any key to skip</div>
 </div>
-                 <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <span class="timeline-date">Jan 2026 - Apr 2026</span>
-    <h3 class="timeline-title">AI/ML Intern (Onsite)</h3>
-    <p class="timeline-company">Haystek Technologies, Madhapur – Hyderabad</p>
-    <ul class="timeline-list">
-        <li>Built an <strong>autonomous SQL Intelligence Agent</strong> that transforms production SQL servers into AI chat, analytics dashboards, and report generators.</li>
-        <li>Engineered a <strong>schema intelligence + vector retrieval layer</strong> using Chroma, validated on <strong>500+ tables across 3 production-grade databases</strong>.</li>
-        <li>Designed a <strong>multi-agent reasoning pipeline</strong> for query clarification, planning, SQL generation, and self-healing error correction.</li>
-        <li>Delivered an <strong>end-to-end full-stack system</strong> using FastAPI and React that generates insights, KPIs, plots, dashboards, and exportable reports.</li>
+
+<!-- ============ AMBIENT LAYERS ============ -->
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__ring"><span class="cursor__label"></span></div>
+  <div class="cursor__dot"></div>
+</div>
+
+<!-- ============ HUD ============ -->
+<header class="hud">
+  <a href="#hero" class="hud__logo" data-magnetic aria-label="Abhishek Babu Shetty — back to top">
+    <span class="logo-orb"><i></i></span>
+    <span class="hud__logo-text">Abhishek<em>Babu Shetty</em></span>
+  </a>
+  <div class="hud__section mono" aria-hidden="true">
+    <span id="hudIdx">00</span><span class="hud__sep">/</span><span id="hudName">Index</span>
+  </div>
+  <div class="hud__right">
+    <button class="hud__sound" id="soundBtn" aria-pressed="false" aria-label="Toggle sound" data-magnetic>
+      <i class="fa-solid fa-volume-xmark snd-off" aria-hidden="true"></i><i class="fa-solid fa-volume-high snd-on" aria-hidden="true"></i>
+    </button>
+    <button class="hud__agent" data-agent-open data-magnetic>
+      <span class="agent-dot"></span><span class="hud__agent-text">Ask my agent</span><kbd class="mono">⌘K</kbd>
+    </button>
+    <button class="hud__menu" id="menuBtn" aria-expanded="false" aria-controls="menu" data-magnetic>
+      <span class="hud__menu-lines"><i></i><i></i></span><span class="mono hud__menu-text">Menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+<div class="fig mono" id="figCap" aria-hidden="true"><b id="figNum">FIG.00</b><span id="figLabel"></span></div>
+
+<nav class="rail" aria-label="Section progress">
+  <a href="#hero" data-rail="hero"><span>Index</span></a>
+  <a href="#about" data-rail="about"><span>About</span></a>
+  <a href="#founder" data-rail="founder"><span>Founder</span></a>
+  <a href="#experience" data-rail="experience"><span>Experience</span></a>
+  <a href="#projects" data-rail="projects"><span>Lab</span></a>
+  <a href="#archive" data-rail="archive"><span>Archive</span></a>
+  <a href="#skills" data-rail="skills"><span>Stack</span></a>
+  <a href="#achievements" data-rail="achievements"><span>Wins</span></a>
+  <a href="#education" data-rail="education"><span>Education</span></a>
+  <a href="#contact" data-rail="contact"><span>Contact</span></a>
+</nav>
+
+<!-- ============ FULLSCREEN MENU ============ -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu__bg"></div>
+  <nav class="menu__nav" aria-label="Main">
+    <a href="#about"><span class="mono">01</span><b>About</b><small class="mono">the builder</small></a>
+    <a href="#founder"><span class="mono">02</span><b>Founder</b><small class="mono">keskur, built solo</small></a>
+    <a href="#experience"><span class="mono">03</span><b>Experience</b><small class="mono">built for production</small></a>
+    <a href="#projects"><span class="mono">04</span><b>Lab</b><small class="mono">8 interactive models</small></a>
+    <a href="#archive"><span class="mono">05</span><b>Archive</b><small class="mono">14 more systems</small></a>
+    <a href="#skills"><span class="mono">06</span><b>Stack</b><small class="mono">knowledge graph</small></a>
+    <a href="#achievements"><span class="mono">07</span><b>Wins</b><small class="mono">6 national titles</small></a>
+    <a href="#education"><span class="mono">08</span><b>Education</b><small class="mono">foundations</small></a>
+    <a href="#contact"><span class="mono">09</span><b>Contact</b><small class="mono">let's build</small></a>
+  </nav>
+  <div class="menu__foot mono">
+    <a href="mailto:abhishetty1506@gmail.com">abhishetty1506@gmail.com</a>
+    <span>
+      <a href="https://github.com/abhishekbabushetty" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/abhishek-babu-shetty/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </span>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="hero" data-section="Index" data-shape="portrait">
+    <div class="hero__top mono" data-intro>
+      <span><i class="pulse"></i>Open to ambitious work</span>
+      <span class="hide-sm hero__founder"><b>Co-Founder &amp; Principal Engineer</b> · Keskur Technologies</span>
+      <span class="hide-sm">17.38°N 78.48°E — Hyderabad, IN</span>
+    </div>
+
+    <h1 class="hero__name" aria-label="Abhishek Babu Shetty, Co-Founder and Principal Engineer at Keskur Technologies">
+      <span class="hero__line"><span class="hero__word" data-chars>Abhishek</span></span>
+      <span class="hero__line hero__line--2"><em class="serif hero__b" data-intro>Babu</em><span class="hero__word" data-chars>Shetty</span></span>
+    </h1>
+
+    <div class="hero__role" data-intro>
+      <span class="mono hero__role-pre">I build</span>
+      <span class="hero__rotator" id="rotator">agents that reason.</span>
+    </div>
+
+    <div class="hero__bottom">
+      <p class="hero__bio" data-intro>
+        Co-founder &amp; principal engineer of <strong>Keskur Technologies</strong> — I built its entire product from scratch: web, backend, Android and iOS. I engineer <em class="serif">agentic AI</em> that reasons, plans and acts, and I take it all the way to production.
+      </p>
+      <div class="hero__ctas" data-intro>
+        <a href="#projects" class="btn btn--primary" data-magnetic>
+          <span>Enter the lab</span><i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button class="btn btn--ghost" data-agent-open data-magnetic>
+          <span class="agent-dot"></span><span>Talk to my agent</span>
+        </button>
+      </div>
+      <a href="#about" class="hero__scroll mono" data-intro aria-label="Scroll to about">
+        <span>Scroll</span><i></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="about" data-section="About" data-shape="embed">
+    <div class="sec-label mono" data-reveal><span>(01)</span> About — the builder</div>
+
+    <p class="manifesto" data-words>
+      I don't stop at models — I ship <em>whole products</em>. I co-founded Keskur Technologies and built every layer of it myself: web, backend, Android, iOS, cloud and AI. Along the way, <em>20+ systems</em> — multi-agent pipelines, RAG engines, voice, vision and IoT — and <em>6 national titles</em> won building under pressure.
+    </p>
+
+    <div class="stats">
+      <div class="stat" data-reveal>
+        <div class="stat__num"><span data-count="2">0</span></div>
+        <div class="stat__label mono">Years building<br>production AI</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__num"><span data-count="20">0</span><sup>+</sup></div>
+        <div class="stat__label mono">Systems<br>designed &amp; built</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__num"><span data-count="6">0</span><sup>×</sup></div>
+        <div class="stat__label mono">National<br>competition wins</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__num"><span data-count="3">0</span><sup>/3</sup></div>
+        <div class="stat__label mono">Platforms shipped solo<br>web · Android · iOS</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" data-marquee="1" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Agentic AI</span><i>✦</i><span>Multi-agent workflows</span><i>✦</i><span>RAG &amp; Graph RAG</span><i>✦</i><span>MCP</span><i>✦</i><span>Voice AI</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>FastAPI</span><i>✦</i><span>React</span><i>✦</i><span>LangGraph</span><i>✦</i><span>CrewAI</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- ============ FOUNDER ============ -->
+  <section id="founder" class="founder" data-section="Founder" data-shape="flow">
+    <div class="sec-head">
+      <div class="sec-label mono" data-reveal><span>(02)</span> Founder — Keskur Technologies</div>
+      <h2 class="sec-title founder__title" data-title>One engineer. <br><em class="serif">The entire product.</em></h2>
+    </div>
+
+    <div class="founder__grid">
+      <div class="founder__copy">
+        <p class="founder__lede" data-reveal>I co-founded <strong>Keskur Technologies</strong> and built its product from the very first line of code — <em class="serif">by myself</em>. Every layer you can touch and every layer you can't: the web platform, the backend, the Android and iOS apps, the data, the cloud and the AI that ties it all together.</p>
+        <div class="founder__facts">
+          <div data-reveal><b>0→1</b><span class="mono">designed, architected &amp; built from scratch</span></div>
+          <div data-reveal><b><span data-count="3">0</span></b><span class="mono">platforms shipped · web · Android · iOS</span></div>
+          <div data-reveal><b><span data-count="100">0</span><sup>%</sup></b><span class="mono">of the stack owned end to end</span></div>
+        </div>
+        <p class="founder__role mono" data-reveal><i class="live-dot"></i>Co-Founder &amp; Principal Engineer · Apr 2026 — present</p>
+      </div>
+
+      <ol class="layers" id="layers" aria-label="The Keskur product stack — every layer built by Abhishek">
+        <li class="layer"><span class="layer__i mono">01</span><div class="layer__body"><b><i class="fa-brands fa-android"></i> Android app</b><small class="mono">React Native · native release builds</small></div><span class="layer__tag mono">built ✓</span></li>
+        <li class="layer"><span class="layer__i mono">02</span><div class="layer__body"><b><i class="fa-brands fa-apple"></i> iOS app</b><small class="mono">React Native · iPhone &amp; iPad</small></div><span class="layer__tag mono">built ✓</span></li>
+        <li class="layer"><span class="layer__i mono">03</span><div class="layer__body"><b><i class="fa-solid fa-display"></i> Web platform</b><small class="mono">Next.js · responsive dashboard</small></div><span class="layer__tag mono">built ✓</span></li>
+        <li class="layer"><span class="layer__i mono">04</span><div class="layer__body"><b><i class="fa-solid fa-plug"></i> API &amp; auth</b><small class="mono">FastAPI · access control · secure sharing</small></div><span class="layer__tag mono">built ✓</span></li>
+        <li class="layer"><span class="layer__i mono">05</span><div class="layer__body"><b><i class="fa-solid fa-gears"></i> Async workers</b><small class="mono">Celery · Redis · ingestion &amp; automation</small></div><span class="layer__tag mono">built ✓</span></li>
+        <li class="layer"><span class="layer__i mono">06</span><div class="layer__body"><b><i class="fa-solid fa-brain"></i> AI layer</b><small class="mono">embeddings · semantic search · auto-organization</small></div><span class="layer__tag mono">built ✓</span></li>
+        <li class="layer"><span class="layer__i mono">07</span><div class="layer__body"><b><i class="fa-solid fa-database"></i> Data &amp; realtime</b><small class="mono">PostgreSQL · vector DB · Firebase</small></div><span class="layer__tag mono">built ✓</span></li>
+        <li class="layer"><span class="layer__i mono">08</span><div class="layer__body"><b><i class="fa-solid fa-cloud"></i> Cloud &amp; deployment</b><small class="mono">AWS / GCP · production infrastructure</small></div><span class="layer__tag mono">built ✓</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="experience" data-section="Experience" data-shape="agents">
+    <div class="sec-head">
+      <div class="sec-label mono" data-reveal><span>(03)</span> Experience — execution trace</div>
+      <h2 class="sec-title" data-title>Built for <em class="serif">production</em></h2>
+    </div>
+
+    <ol class="xp">
+      <li class="xp__item is-open" data-reveal>
+        <button class="xp__head" aria-expanded="true">
+          <span class="xp__idx mono">01</span>
+          <span class="xp__role">Co-Founder &amp; Principal Engineer <small class="xp__badge mono">founder</small></span>
+          <span class="xp__co">Keskur Technologies</span>
+          <span class="xp__date mono"><i class="live-dot"></i>Apr 2026 — Present</span>
+          <span class="xp__toggle" aria-hidden="true"></span>
+        </button>
+        <div class="xp__body"><div class="xp__inner">
+          <div class="xp__metrics mono"><span>built solo from scratch</span><span>web · Android · iOS</span><span>backend + cloud</span><span>AI-native</span></div>
+          <p class="xp__tech mono"><b>stack ›</b> React Native · Next.js · FastAPI · PostgreSQL · Redis · Celery · Firebase · AWS/GCP · Vector DBs</p>
+          <ul class="xp__log">
+            <li>Architected and built <strong>Keskur's entire product from scratch, single-handedly</strong> — web platform, backend, Android and iOS apps, cloud infrastructure and AI layer, from the first commit to production.</li>
+            <li>Shipped a <strong>cross-platform AI document system</strong> — React Native apps for Android &amp; iOS plus a Next.js web platform — enabling paperless workflows, secure storage and automated lifecycle management.</li>
+            <li>Engineered the <strong>FastAPI + PostgreSQL backend</strong> with <strong>Celery + Redis</strong> async pipelines for file ingestion, background jobs and workflow automation.</li>
+            <li>Built <strong>semantic search and auto-organization</strong> on vector embeddings — eliminating duplication and making every document instantly retrievable.</li>
+            <li>Delivered <strong>real-time notifications and secure sharing</strong> with Firebase and fine-grained access control for multi-user teams, and own the <strong>AWS/GCP deployment</strong> end to end.</li>
+          </ul>
+        </div></div>
+      </li>
+
+      <li class="xp__item" data-reveal>
+        <button class="xp__head" aria-expanded="false">
+          <span class="xp__idx mono">02</span>
+          <span class="xp__role">AI/ML Intern <small>(Onsite)</small></span>
+          <span class="xp__co">Haystek Technologies</span>
+          <span class="xp__date mono">Jan 2026 — Apr 2026</span>
+          <span class="xp__toggle" aria-hidden="true"></span>
+        </button>
+        <div class="xp__body"><div class="xp__inner">
+          <div class="xp__metrics mono"><span>500+ tables</span><span>3 production DBs</span><span>self-healing SQL</span><span>Madhapur, Hyderabad</span></div>
+          <ul class="xp__log">
+            <li>Built an <strong>autonomous SQL Intelligence Agent</strong> that transforms production SQL servers into AI chat, analytics dashboards, and report generators.</li>
+            <li>Engineered a <strong>schema intelligence + vector retrieval layer</strong> using Chroma, validated on <strong>500+ tables across 3 production-grade databases</strong>.</li>
+            <li>Designed a <strong>multi-agent reasoning pipeline</strong> for query clarification, planning, SQL generation, and self-healing error correction.</li>
+            <li>Delivered an <strong>end-to-end full-stack system</strong> using FastAPI and React that generates insights, KPIs, plots, dashboards, and exportable reports.</li>
+          </ul>
+        </div></div>
+      </li>
+
+      <li class="xp__item" data-reveal>
+        <button class="xp__head" aria-expanded="false">
+          <span class="xp__idx mono">03</span>
+          <span class="xp__role">AI Intern</span>
+          <span class="xp__co">MulticoreWare</span>
+          <span class="xp__date mono">Jul 2023 — May 2025</span>
+          <span class="xp__toggle" aria-hidden="true"></span>
+        </button>
+        <div class="xp__body"><div class="xp__inner">
+          <div class="xp__metrics mono"><span>+32% YOLO accuracy</span><span>40K+ images</span><span>BEVFormer · Autoware</span><span>3D reconstruction</span></div>
+          <ul class="xp__log">
+            <li>Reduced autonomous testing costs by simulating full driving scenes — predicting <strong>3D meshes from single images</strong> using multi-angle reconstruction.</li>
+            <li>Built a <strong>smart annotation platform</strong> with YOLO-based label suggestions and automated dataset balancing for <strong>40K+ driving images</strong>.</li>
+            <li>Designed an <strong>AI-driven data pipeline</strong> that detects underrepresented classes, generates synthetic data, and improves YOLO accuracy by <strong>32%</strong>.</li>
+            <li>Integrated <strong>BEVFormer-based 3D perception</strong> into the Autoware pipeline, enhancing object detection robustness for global autonomous clients.</li>
+          </ul>
+        </div></div>
+      </li>
+
+      <li class="xp__item" data-reveal>
+        <button class="xp__head" aria-expanded="false">
+          <span class="xp__idx mono">04</span>
+          <span class="xp__role">Web Development Lead</span>
+          <span class="xp__co">Kareoss <small>(College Club)</small></span>
+          <span class="xp__date mono">Jan 2024 — Aug 2025</span>
+          <span class="xp__toggle" aria-hidden="true"></span>
+        </button>
+        <div class="xp__body"><div class="xp__inner">
+          <div class="xp__metrics mono"><span>100% uptime</span><span>thousands of participants</span><span>AI chatbots</span></div>
+          <ul class="xp__log">
+            <li>Led the development of official websites for national-level hackathons and college events using <strong>React.js</strong> and <strong>FastAPI</strong>, ensuring smooth registration for thousands of participants.</li>
+            <li>Optimized backend performance to handle high-concurrency traffic during event launches, achieving <strong>100% uptime</strong>.</li>
+            <li>Integrated <strong>AI-powered chatbots</strong> to automate participant query resolution, significantly reducing the support team's workload.</li>
+            <li><strong>Event Coordinator (Jan 2024 – Apr 2024):</strong> Managed technical requirements and logistics for large-scale tech events.</li>
+          </ul>
+        </div></div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ PROJECTS / LAB ============ -->
+  <section id="projects" class="lab-sec" data-section="Lab" data-shape="surface">
+    <div class="lab" id="lab">
+      <div class="lab__intro">
+        <div class="sec-label mono" data-reveal><span>(04)</span> Projects — the lab</div>
+        <h2 class="sec-title" data-title>Not screenshots. <br><em class="serif">How they think.</em></h2>
+        <p class="lab__lede" data-reveal>Eight flagship builds. Each card holds an interactive model of the core idea behind the project — not a recording, not a mock-up. Play with it, then read the source.</p>
+        <div class="lab__progress mono" aria-hidden="true"><span id="labCount">01</span> / 08<i><b id="labBar"></b></i></div>
+      </div>
+
+      <div class="lab__track" id="labTrack">
+
+        <article class="proj" data-viz="agents">
+          <div class="proj__viz" data-cursor="Play"><canvas></canvas><span class="proj__live mono"><i></i>interactive model · multi-agent graph</span><span class="proj__hint mono">move to attract agents</span></div>
+          <div class="proj__info">
+            <div class="proj__meta mono"><span>P/01</span><span>Agentic AI · Hackathon win</span></div>
+            <h3 class="proj__title">EduAI Platform</h3>
+            <p class="proj__desc">A dual-sided AI platform built in a 6-day hackathon sprint: AI-generated curricula, a function-calling tutor wired to 8+ tools (Drive, YouTube, Twilio voice, LinkedIn, GitHub), adaptive quizzes and an autonomous recruiter that matches students to jobs.</p>
+            <ul class="proj__tech mono"><li>CrewAI</li><li>LangGraph</li><li>Graph RAG</li><li>Gemini</li><li>FastAPI</li><li>React Native</li><li>Twilio</li><li>pg_vector</li><li>FAISS</li><li>Docker</li></ul>
+            <div class="proj__links">
+              <a href="https://github.com/abhishekbabushetty/learning-recruiter-platform" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+              <a href="https://abhishekbabushetty-ccbp.netlify.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj" data-viz="rag">
+          <div class="proj__viz" data-cursor="Query"><canvas></canvas><span class="proj__live mono"><i></i>interactive model · vector retrieval</span><span class="proj__hint mono">your cursor is the query</span></div>
+          <div class="proj__info">
+            <div class="proj__meta mono"><span>P/02</span><span>RAG · Healthcare</span></div>
+            <h3 class="proj__title">Medical Knowledge Retrieval</h3>
+            <p class="proj__desc">A retrieval engine over a 1000-page medical encyclopedia: chunked, embedded with Sentence Transformers, indexed in FAISS and answered by Flan-T5 from grounded context — precise answers instead of guesswork.</p>
+            <ul class="proj__tech mono"><li>RAG</li><li>FAISS</li><li>Sentence Transformers</li><li>Flan-T5</li><li>LangChain</li><li>Chroma DB</li></ul>
+            <div class="proj__links">
+              <a href="https://github.com/abhishekbabushetty/medical-chatbot" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj" data-viz="astar">
+          <div class="proj__viz" data-cursor="Route"><canvas></canvas><span class="proj__live mono"><i></i>interactive model · A* pathfinding</span><span class="proj__hint mono">click the sea to set a destination</span></div>
+          <div class="proj__info">
+            <div class="proj__meta mono"><span>P/03</span><span>Optimization · Maritime</span></div>
+            <h3 class="proj__title">Darwin Pilot</h3>
+            <p class="proj__desc">Multi-role ocean routing: A* search over live ocean conditions plus LSTM forecasts to plot safe, fuel-efficient marine routes. The same engine powered my Hacknite Bangalore entry.</p>
+            <ul class="proj__tech mono"><li>A*</li><li>LSTM</li><li>RNN</li><li>FastAPI</li><li>Node.js</li><li>MongoDB</li><li>Flutter</li></ul>
+            <div class="proj__links">
+              <a href="https://github.com/abhishekbabushetty/Darwin-pilot" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj" data-viz="diffusion">
+          <div class="proj__viz" data-cursor="Noise"><canvas></canvas><span class="proj__live mono"><i></i>interactive model · denoise → detect</span><span class="proj__hint mono">hover to inject noise</span></div>
+          <div class="proj__info">
+            <div class="proj__meta mono"><span>P/04</span><span>GenAI · Vision</span></div>
+            <h3 class="proj__title">Synthetic Data Pipeline</h3>
+            <p class="proj__desc">Beats data scarcity with generative AI: an LLM writes diverse prompts, Stable Diffusion renders a custom dataset, and YOLOv8 trains on it — zero manual data collection.</p>
+            <ul class="proj__tech mono"><li>Stable Diffusion</li><li>Gemini</li><li>Llama 3</li><li>Ollama</li><li>PyTorch</li><li>YOLOv8</li></ul>
+            <div class="proj__links">
+              <a href="https://github.com/abhishekbabushetty/Synthetic-Data-Driven-Image-Classification-using-Diffusion-Models-and-YOLOv8" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj" data-viz="ide">
+          <div class="proj__viz"><canvas></canvas><span class="proj__live mono"><i></i>interactive model · AI pair-programmer</span><span class="proj__hint mono">click to restart the session</span></div>
+          <div class="proj__info">
+            <div class="proj__meta mono"><span>P/05</span><span>Dev Tools · Full-stack</span></div>
+            <h3 class="proj__title">Full-Stack Online IDE</h3>
+            <p class="proj__desc">A browser IDE that feels like VS Code: Monaco editor, xterm.js terminal, sandboxed execution for Python, JS, Java and C++, and Gemini built in — inline <code>#ai</code> generation, an AI tutor and chat.</p>
+            <ul class="proj__tech mono"><li>React 19</li><li>Node.js</li><li>Monaco</li><li>xterm.js</li><li>Gemini</li></ul>
+            <div class="proj__links">
+              <a href="https://github.com/abhishekbabushetty/online-ai-based-code-editor" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj" data-viz="voice">
+          <div class="proj__viz" data-cursor="Speak"><canvas></canvas><span class="proj__live mono"><i></i>interactive model · voice → refined English</span><span class="proj__hint mono">move closer to raise the voice</span></div>
+          <div class="proj__info">
+            <div class="proj__meta mono"><span>P/06</span><span>Voice AI · NLP</span></div>
+            <h3 class="proj__title">Messaging Assistant</h3>
+            <p class="proj__desc">Speak in any language, send flawless English. Voice-first AI that understands what you said and rewrites it with full accuracy — built for people who think in their own language but chat in English.</p>
+            <ul class="proj__tech mono"><li>Voice AI</li><li>NLP</li><li>Mobile</li></ul>
+            <div class="proj__links">
+              <a href="https://github.com/abhishekbabushetty/messaging-assistant" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj" data-viz="balance">
+          <div class="proj__viz" data-cursor="Balance"><canvas></canvas><span class="proj__live mono"><i></i>interactive model · class rebalancing</span><span class="proj__hint mono">click to re-run the pipeline</span></div>
+          <div class="proj__info">
+            <div class="proj__meta mono"><span>P/07</span><span>Data Engineering · CV</span></div>
+            <h3 class="proj__title">Image Data Balancing</h3>
+            <p class="proj__desc">Point it at any image dataset: it finds over-represented classes, rebalances with targeted augmentation and hands YOLOv8 a fair training set — the same thinking behind a 32% YOLO accuracy gain in production.</p>
+            <ul class="proj__tech mono"><li>Python</li><li>YOLOv8</li><li>Augmentation</li></ul>
+            <div class="proj__links">
+              <a href="https://github.com/abhishekbabushetty/image-data-balancing-pipeline" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj" data-viz="room">
+          <div class="proj__viz" data-cursor="Drag"><canvas></canvas><span class="proj__live mono"><i></i>interactive model · empty → designed</span><span class="proj__hint mono">move across to compare before / after</span></div>
+          <div class="proj__info">
+            <div class="proj__meta mono"><span>P/08</span><span>Generative AI · Vision</span></div>
+            <h3 class="proj__title">Room Interior Designer</h3>
+            <p class="proj__desc">CLIP reads the empty room, an auto-built prompt describes it, and Stable Diffusion ControlNet renders multiple interior designs from its edges — refined live from your feedback.</p>
+            <ul class="proj__tech mono"><li>CLIP</li><li>ControlNet</li><li>Stable Diffusion</li><li>Gradio</li><li>OpenCV</li></ul>
+            <div class="proj__links">
+              <a href="https://github.com/abhishekbabushetty/room-interior-designer" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="lab__end">
+          <p class="mono">+14 more systems in the</p>
+          <a href="#archive" class="lab__gh" data-magnetic>Archive<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHIVE ============ -->
+  <section id="archive" class="archive" data-section="Archive" data-shape="rag">
+    <div class="sec-head sec-head--row">
+      <div>
+        <div class="sec-label mono" data-reveal><span>(05)</span> Archive — 14 more systems</div>
+        <h2 class="sec-title" data-title>And it <em class="serif">doesn't stop</em> there</h2>
+      </div>
+      <div class="graph__filters arc__filters mono" id="arcFilters" data-reveal></div>
+    </div>
+    <ul class="arc" id="arc">
+      <li class="arc__item" data-cat="agents" data-tech="Gemma · planning · tool use · self-recovery · vision" data-reveal><div class="arc__row"><span class="arc__i mono">01</span><span class="arc__main"><b class="arc__name">Gemma Reflex<em class="arc__status mono">in development</em></b><span class="arc__desc">An autonomous workspace agent: it reads the live page, project or document, then plans, acts, verifies the result and recovers from failure on its own — using vision only when structured state can&#x27;t answer.</span></span><span class="arc__tags mono">Agents · Autonomy</span><span class="arc__go" aria-hidden="true">◌</span></div></li>
+      <li class="arc__item" data-cat="vision" data-tech="TypeScript · computer vision · real-time analytics" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/teachpulse-ai" target="_blank" rel="noopener"><span class="arc__i mono">02</span><span class="arc__main"><b class="arc__name">TeachPulse AI</b><span class="arc__desc">Classroom intelligence from live student video — engagement, emotion and attention measured in real time, with privacy-safe insights and adaptive teaching suggestions.</span></span><span class="arc__tags mono">Vision · EdTech</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="agents" data-tech="LangGraph · FastAPI · React · ChromaDB · SQLite" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/Post-Discharge-Medical-AI-Assistant" target="_blank" rel="noopener"><span class="arc__i mono">03</span><span class="arc__main"><b class="arc__name">Post-Discharge Care AI</b><span class="arc__desc">A multi-agent hospital team on LangGraph: a receptionist agent routes to a clinical specialist that answers with agentic RAG over nephrology guidelines and the patient&#x27;s own records.</span></span><span class="arc__tags mono">Agents · Health</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="devtools" data-tech="Python · Gemini · CLI" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/AI-Powered-Command-Line-Code-Assistant" target="_blank" rel="noopener"><span class="arc__i mono">04</span><span class="arc__main"><b class="arc__name">AI Command-Line Dev</b><span class="arc__desc">A whole project from a single prompt. Reads your repo for context and turns plain English into real file creates, edits and deletes through Gemini — with a safe dry-run mode.</span></span><span class="arc__tags mono">Dev tools · Agents</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="agents" data-tech="FastAPI · React · Gemini · Tesseract OCR" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/ai-multimodel-chat-agent-with-image-audio-document-support" target="_blank" rel="noopener"><span class="arc__i mono">05</span><span class="arc__main"><b class="arc__name">Agentic AI Workspace</b><span class="arc__desc">A multimodal planner–executor agent across text, images, PDFs, audio and YouTube — OCR, speech recognition and LLM steps with fully transparent plans and logs.</span></span><span class="arc__tags mono">Agents · Multimodal</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="devtools" data-tech="FastAPI · React · WebSockets · Gemini" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/CodeMind-AI-Collaborative-Code-Studio" target="_blank" rel="noopener"><span class="arc__i mono">06</span><span class="arc__main"><b class="arc__name">CodeMind</b><span class="arc__desc">A real-time collaborative AI code studio: chat-to-code with Gemini, a live sandboxed preview and WebSocket-synced shared sessions.</span></span><span class="arc__tags mono">Dev tools · Realtime</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="voice" data-tech="React · Node.js · Gemini · Deepgram" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/ai-interviewer" target="_blank" rel="noopener"><span class="arc__i mono">07</span><span class="arc__main"><b class="arc__name">AI Interviewer</b><span class="arc__desc">Voice-driven interviews generated from your résumé — Gemini asks, Deepgram listens, and every session ends in an automatic summary.</span></span><span class="arc__tags mono">Voice · HR tech</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="iot" data-tech="ESP32 · PostgreSQL · Redis · Celery · Twilio · Docker" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/FreshGuard" target="_blank" rel="noopener"><span class="arc__i mono">08</span><span class="arc__main"><b class="arc__name">FreshGuard</b><span class="arc__desc">IoT food-spoilage detection: ESP32 + MQ-135 gas sensing streams into a live dashboard, Celery/Redis pipelines and Twilio voice-call alerts. Docker-ready.</span></span><span class="arc__tags mono">IoT · Hardware</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="data" data-tech="Python · embeddings · RAG reasoning" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/AETHEL" target="_blank" rel="noopener"><span class="arc__i mono">09</span><span class="arc__main"><b class="arc__name">AETHEL</b><span class="arc__desc">An all-modality meaning engine: universal ingestion, hierarchical embeddings from micro to macro, and traceable RAG reasoning with zero detail loss.</span></span><span class="arc__tags mono">Data · RAG</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="data" data-tech="FastAPI · React · Leaflet · NetCDF" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/Argo-Query-Data-Processing-and-Downloading" target="_blank" rel="noopener"><span class="arc__i mono">10</span><span class="arc__main"><b class="arc__name">Argo Nexus</b><span class="arc__desc">An ocean-data platform: optimized binary search over the global Argo float index, map-drawn queries and authentic NetCDF downloads with QC flags.</span></span><span class="arc__tags mono">Data · Ocean science</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="more" data-tech="Python · cryptography · image processing" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/Secure-Image-Steganography-Analysis-Tool" target="_blank" rel="noopener"><span class="arc__i mono">11</span><span class="arc__main"><b class="arc__name">Stego Forensics Suite</b><span class="arc__desc">A steganography and forensic-analysis toolkit: LSB, DCT and PVD encoding, real Fernet encryption, compression and visual analytics.</span></span><span class="arc__tags mono">Security · Forensics</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="vision" data-tech="YOLO · OpenCV · Streamlit" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/Yolo-Batch-Annotator-Live-Detector" target="_blank" rel="noopener"><span class="arc__i mono">12</span><span class="arc__main"><b class="arc__name">YOLO Auto-Annotator</b><span class="arc__desc">Batch auto-labelling straight to YOLO format, live video detection and a dataset visualiser in one toolkit.</span></span><span class="arc__tags mono">Vision · Data</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="more" data-tech="Python · NumPy · Plotly · Streamlit" data-reveal><a class="arc__row" href="https://abhishek-b-shetty-karkhana-io.streamlit.app/" target="_blank" rel="noopener"><span class="arc__i mono">13</span><span class="arc__main"><b class="arc__name">Möbius Strip Visualizer</b><span class="arc__desc">A parametric 3D math lab: live surface-area and edge-length computation, colour maps and .obj export — deployed on Streamlit.</span></span><span class="arc__tags mono">Math · 3D</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
+      <li class="arc__item" data-cat="more" data-tech="React · Node.js · Express · SQL" data-reveal><a class="arc__row" href="https://github.com/abhishekbabushetty/colabnet" target="_blank" rel="noopener"><span class="arc__i mono">14</span><span class="arc__main"><b class="arc__name">ColabNet</b><span class="arc__desc">A collaboration-and-funding marketplace: post ideas, assemble teams, request funding and get approvals from funders.</span></span><span class="arc__tags mono">Full-stack</span><span class="arc__go" aria-hidden="true">↗</span></a></li>
     </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">Jul 2023 - May 2025</span>
-                    <h3 class="timeline-title">AI Intern</h3>
-                    <p class="timeline-company">MulticoreWare</p>
-                    <ul class="timeline-list">
-                        <li>Reduced autonomous testing costs by simulating full driving scenes—predicting 3D meshes from single images using multi-angle reconstruction.</li>
-                        <li>Built a smart annotation platform with YOLO-based label suggestions and automated dataset balancing for 40K+ driving images.</li>
-                        <li>Designed an AI-driven data pipeline that detects underrepresented classes, generates synthetic data, and improves YOLO accuracy by 32%.</li>
-                        <li>Integrated BEVFormer-based 3D perception into the Autoware pipeline, enhancing object detection robustness for global autonomous clients.</li>
-                    </ul>
-                </div>
+    <div class="arc__float mono" id="arcFloat" aria-hidden="true"></div>
+    <p class="arc__more mono" data-reveal>41 public repositories and counting — <a href="https://github.com/abhishekbabushetty" target="_blank" rel="noopener">explore all on GitHub ↗</a></p>
+  </section>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">Jan 2024 - Aug 2025</span>
-                    <h3 class="timeline-title">Web Development Lead</h3>
-                    <p class="timeline-company">Kareoss (College Club)</p>
-                    <ul class="timeline-list">
-                        <li>Led the development of official websites for national-level hackathons and college events using <strong>React.js</strong> and <strong>FastAPI</strong>, ensuring smooth registration for thousands of participants.</li>
-                        <li>Optimized backend performance to handle high-concurrency traffic during event launches, achieving 100% uptime.</li>
-                        <li>Integrated <strong>AI-powered chatbots</strong> to automate participant query resolution, significantly reducing the support team's workload.</li>
-                        <li><strong>Event Coordinator (Jan 2024 - Apr 2024):</strong> Managed technical requirements and logistics for large-scale tech events.</li>
-                    </ul>
-                </div>
-            </div>
+  <!-- ============ SKILLS / GRAPH ============ -->
+  <section id="skills" class="skills" data-section="Stack" data-shape="nnet">
+    <div class="sec-head sec-head--row">
+      <div>
+        <div class="sec-label mono" data-reveal><span>(06)</span> Stack — knowledge graph</div>
+        <h2 class="sec-title" data-title>The full stack, <em class="serif">mapped</em></h2>
+      </div>
+      <div class="graph__filters mono" id="graphFilters" data-reveal></div>
+    </div>
+
+    <div class="graph" data-reveal>
+      <canvas id="graphCanvas" aria-hidden="true"></canvas>
+      <div class="graph__tip mono" id="graphTip"></div>
+      <p class="graph__hint mono">drag nodes · hover to trace connections</p>
+    </div>
+
+    <!-- Source of truth for the graph (also read by screen readers) -->
+    <div class="skills-data sr-only" id="skillsData">
+      <div data-cat="Languages"><h3>Languages</h3><span>Python</span><span>C++</span><span>Java</span><span>JavaScript</span></div>
+      <div data-cat="Frameworks"><h3>Frameworks</h3><span>React.js</span><span>Next.js</span><span>Node.js</span><span>Express.js</span><span>FastAPI</span><span>WebSockets</span></div>
+      <div data-cat="Mobile"><h3>Mobile</h3><span>React Native</span><span>Android</span><span>iOS</span><span>Firebase</span></div>
+      <div data-cat="Agentic AI"><h3>Agentic AI &amp; GenAI</h3><span>Agentic Frameworks</span><span>MCP</span><span>CrewAI</span><span>LangGraph</span><span>AutoGen</span><span>Multi-agent Workflows</span><span>RAG Systems</span><span>LangChain</span><span>Conversational AI</span><span>Twilio Voice Agents</span></div>
+      <div data-cat="Core AI & CV"><h3>Core AI &amp; Computer Vision</h3><span>Deep Learning</span><span>Machine Learning</span><span>Quantization</span><span>PyTorch</span><span>TensorFlow</span><span>YOLOv8</span><span>OpenCV</span><span>Scikit-learn</span></div>
+      <div data-cat="Data"><h3>Databases</h3><span>SQL</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Supabase</span><span>FAISS</span><span>ChromaDB</span></div>
+      <div data-cat="DevOps"><h3>DevOps &amp; Tools</h3><span>Docker</span><span>AWS</span><span>Celery</span><span>Git</span><span>Linux</span><span>LangSmith</span><span>Postman</span><span>GCP</span><span>VS Code</span></div>
+      <div data-cat="Leadership"><h3>Leadership &amp; Soft Skills</h3><span>Team Leadership</span><span>Project Management</span><span>Public Speaking</span><span>Mentoring</span><span>Problem Solving</span><span>Event Management</span><span>Agile</span></div>
+    </div>
+  </section>
+
+  <!-- ============ ACHIEVEMENTS ============ -->
+  <div class="marquee marquee--big" data-marquee="-1" aria-hidden="true">
+    <div class="marquee__track">
+      <span>6× National winner</span><i>✦</i><span>Built under pressure</span><i>✦</i><span>6× National winner</span><i>✦</i><span>Built under pressure</span><i>✦</i>
+    </div>
+  </div>
+
+  <section id="achievements" class="wins" data-section="Wins" data-shape="globe">
+    <div class="sec-head">
+      <div class="sec-label mono" data-reveal><span>(07)</span> Recognition — hackathons &amp; contests</div>
+      <h2 class="sec-title" data-title>Proven where it <em class="serif">counts</em></h2>
+    </div>
+
+    <div class="ring" id="ring" data-cursor="Drag">
+      <div class="ring__stage" id="ringStage">
+        <a class="win" href="https://drive.google.com/file/d/1J8XjzO-LoYP-WYFD2NOW9rM_PEPWLI2v/view?usp=sharing" target="_blank" rel="noopener">
+          <span class="win__rank mono">1st Prize</span>
+          <i class="fa-solid fa-code win__icon"></i>
+          <h3>CodeConflict</h3>
+          <p>Winner of a <strong>3-round coding challenge</strong> — MCQs, debugging and programming — showcasing problem-solving and DSA.</p>
+          <span class="win__cta mono">View certificate ↗</span>
+        </a>
+        <a class="win" href="https://www.linkedin.com/posts/nithin-reddy-thummala-442657268_happy-to-share-that-our-team-voxel-emerged-ugcPost-7315275683440537600-HRcj" target="_blank" rel="noopener">
+          <span class="win__rank mono">Hackathon</span>
+          <i class="fa-solid fa-ship win__icon"></i>
+          <h3>Hacknite Bangalore</h3>
+          <p>Built an <strong>advanced ship-route optimization app</strong> integrating LSTM ocean predictions with AI path planning.</p>
+          <span class="win__cta mono">View post ↗</span>
+        </a>
+        <a class="win" href="https://www.linkedin.com/posts/abhishek-babu-shetty_hackxcelereate2k25-activity-7302694514236739585-KP1h" target="_blank" rel="noopener">
+          <span class="win__rank mono">Hackathon</span>
+          <i class="fa-solid fa-graduation-cap win__icon"></i>
+          <h3>HackXcelerate 2K25</h3>
+          <p>Built the <strong>EduAI Platform</strong> — AI-driven study plans with seamless Google service integration.</p>
+          <span class="win__cta mono">View post ↗</span>
+        </a>
+        <a class="win" href="https://www.linkedin.com/posts/abhishek-babu-shetty_synergia2k25-euphoriacompetition-ai-activity-7305986625384132608-DdVB" target="_blank" rel="noopener">
+          <span class="win__rank mono">1st Place</span>
+          <i class="fa-solid fa-microchip win__icon"></i>
+          <h3>Synergia 2K25</h3>
+          <p>Pitched an <strong>AI-native operating system</strong> that automates everything.</p>
+          <span class="win__cta mono">View post ↗</span>
+        </a>
+        <a class="win" href="https://www.linkedin.com/posts/abhishek-babu-shetty_buildingbeyondcode-hackathonsuccess-brilliantbharathhackathon2k25-activity-7304190690261929984-zIX4" target="_blank" rel="noopener">
+          <span class="win__rank mono">Hackathon</span>
+          <i class="fa-solid fa-people-group win__icon"></i>
+          <h3>Brilliant Bharath</h3>
+          <p>An <strong>AI employee-management &amp; upskilling platform</strong> that recommends learning paths from project tech stacks.</p>
+          <span class="win__cta mono">View post ↗</span>
+        </a>
+        <a class="win" href="https://www.linkedin.com/posts/abhishek-babu-shetty_innovarc25-hackathon-innovation-activity-7300935502784786433-I6qE" target="_blank" rel="noopener">
+          <span class="win__rank mono">2nd Prize</span>
+          <i class="fa-solid fa-vector-square win__icon"></i>
+          <h3>InnovArc '25</h3>
+          <p>An AI platform for <strong>auto-annotation</strong>, exporting images in YOLO / COCO formats.</p>
+          <span class="win__cta mono">View post ↗</span>
+        </a>
+      </div>
+    </div>
+    <p class="ring__hint mono"><span class="hide-sm">drag to spin · </span>click a card to open</p>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="edu" data-section="Education" data-shape="descent">
+    <div class="sec-head">
+      <div class="sec-label mono" data-reveal><span>(08)</span> Education — foundations</div>
+      <h2 class="sec-title" data-title>Consistently at the <em class="serif">top</em></h2>
+    </div>
+    <div class="edu__list">
+      <div class="edu__row" data-reveal>
+        <span class="edu__year mono">2022 — 2026</span>
+        <div class="edu__what">
+          <h3>Bachelor of Technology</h3>
+          <p>Computer Science &amp; Engineering (AI &amp; ML)</p>
+          <span class="mono">Kalasalingam Academy of Research and Education</span>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <div class="project-links">
-                            <a href="https://github.com/abhishekbabushetty/learning-recruiter-platform" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://abhishekbabushetty-ccbp.netlify.app/" target="_blank"><i class="fa-solid fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">EduAI Platform</h3>
-                    <p class="project-desc">AI-Powered Learning & Recruitment Platform. Features an adaptive learning engine, context-aware AI mentor, and autonomous AI recruiter.</p>
-                    <div class="project-tech">
-                        <span>PostgreSQL</span> <span>SQLAlchemy</span> <span>Flask</span> <span>Twilio</span> <span>React</span> <span>React Native</span> <span>FastAPI</span> <span>Google Gemini AI</span> <span>CrewAI</span> <span>Hugging Face</span> <span>LangGraph</span> <span>RAG</span> <span>Graph RAG</span> <span>Docker</span> <span>Chroma DB</span> <span>pg_vector</span> <span>FAISS</span> <span>OAuth</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <div class="project-links">
-                            <a href="https://github.com/abhishekbabushetty/medical-chatbot" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Medical Knowledge Retrieval</h3>
-                    <p class="project-desc">AI-powered retrieval system indexing 1000+ medical pages. Uses FAISS, Sentence Transformers, and Flan-T5 for precise answers.</p>
-                    <div class="project-tech">
-                        <span>RAG</span> <span>Chroma DB</span> <span>Flan-T5</span> <span>LangChain</span> <span>Python</span> <span>FAISS</span> <span>Streamlit</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <div class="project-links">
-                            <a href="https://github.com/abhishekbabushetty/Darwin-pilot" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Darwin Pilot (Ship Routing)</h3>
-                    <p class="project-desc">Multi-role ocean routing system with A* pathfinding for safe and fuel-efficient marine routes using live ocean conditions.</p>
-                    <div class="project-tech">
-                        <span>A* Algorithm</span> <span>LSTM</span> <span>RNN</span> <span>FastAPI</span> <span>Node.js</span> <span>MongoDB</span> <span>Flutter</span>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <div class="project-links">
-                            <a href="https://github.com/abhishekbabushetty/Synthetic-Data-Driven-Image-Classification-using-Diffusion-Models-and-YOLOv8" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Synthetic Data Pipeline</h3>
-                    <p class="project-desc">Automated ML pipeline using LLaMA and Stable Diffusion to generate synthetic data, improving YOLOv8 accuracy.</p>
-                    <div class="project-tech">
-                        <span>Ollama</span> <span>DeepSeek</span> <span>Llama 3</span> <span>Stable Diffusion</span> <span>PyTorch</span> <span>YOLOv8</span>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <div class="project-links">
-                            <a href="https://github.com/abhishekbabushetty/online-ai-based-code-editor" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Full-Stack Online IDE</h3>
-                    <p class="project-desc">VS Code-inspired web IDE with real-time terminal, multi-language support, and AI-powered code assistance via Gemini.</p>
-                    <div class="project-tech">
-                        <span>React</span> <span>Node.js</span> <span>Gemini API</span> <span>Monaco</span>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <div class="project-links">
-                            <a href="https://github.com/abhishekbabushetty/messaging-assistant" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Messaging Assistant</h3>
-                    <p class="project-desc">Voice-activated AI app that refines messages in any language to perfect English for WhatsApp.</p>
-                    <div class="project-tech">
-                        <span>AI Voice</span> <span>NLP</span> <span>Mobile</span>
-                    </div>
-                </div>
-
-                <!-- Project 7 -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <div class="project-links">
-                            <a href="https://github.com/abhishekbabushetty/image-data-balancing-pipeline" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Image Data Balancing</h3>
-                    <p class="project-desc">Pipeline that automatically detects over-represented classes and balances datasets using augmentation for YOLOv8 training.</p>
-                    <div class="project-tech">
-                        <span>Python</span> <span>YOLOv8</span> <span>Data Augmentation</span>
-                    </div>
-                </div>
-
-                <!-- Project 8 -->
-                <div class="glass-card project-card">
-                    <div class="project-header">
-                        <i class="fa-regular fa-folder folder-icon"></i>
-                        <div class="project-links">
-                            <a href="https://github.com/abhishekbabushetty/room-interior-designer" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Room Interior Designer</h3>
-                    <p class="project-desc">Generative AI application that takes a photo of an empty room and generates professional interior designs.</p>
-                    <div class="project-tech">
-                        <span>Stable Diffusion</span> <span>ControlNet</span> <span>Computer Vision</span> <span>Generative AI</span> <span>Image-to-Image</span> <span>Python</span>
-                    </div>
-            </div>
+        <div class="edu__score"><b data-count="9.11" data-decimals="2">0</b><span class="mono">CGPA</span></div>
+      </div>
+      <div class="edu__row" data-reveal>
+        <span class="edu__year mono">2020 — 2022</span>
+        <div class="edu__what">
+          <h3>Intermediate Education</h3>
+          <p>Science Stream (MPC) · Top performer</p>
+          <span class="mono">Sri Chaitanya Junior Kalasala</span>
         </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements">
-        <div class="container">
-            <h2 class="section-title">Achievements</h2>
-            <div class="achievements-grid">
-                <!-- CodeConflict -->
-                <div class="glass-card achievement-card">
-                    <i class="fa-solid fa-code trophy-icon" style="color: var(--primary-color);"></i>
-                    <h3>CodeConflict - 1st Prize</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Winner of a <strong>3-round coding challenge</strong> (MCQs, debugging, programming), showcasing strong problem-solving and DSA skills.</p>
-                    <a href="https://drive.google.com/file/d/1J8XjzO-LoYP-WYFD2NOW9rM_PEPWLI2v/view?usp=sharing" target="_blank" style="color: var(--primary-color); font-size: 0.9rem; margin-top: 5px; display: inline-block;">View Certificate</a>
-                </div>
-
-                <!-- Hacknite Bangalore -->
-                <div class="glass-card achievement-card">
-                    <i class="fa-solid fa-trophy trophy-icon" style="color: #ffd700;"></i>
-                    <h3>Hacknite Bangalore</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Built an <strong>advanced Ship Route Optimization application</strong>, integrating LSTM ocean predictions and AI-based path planning.</p>
-                    <a href="https://www.linkedin.com/posts/nithin-reddy-thummala-442657268_happy-to-share-that-our-team-voxel-emerged-ugcPost-7315275683440537600-HRcj?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEDyaCkBZSkhKeKuNkw_eiFHEakNqTdtPhk" target="_blank" style="color: var(--primary-color); font-size: 0.9rem; margin-top: 5px; display: inline-block;">View Post</a>
-                </div>
-
-                <!-- HackXcelerate 2K25 -->
-                <div class="glass-card achievement-card">
-                    <i class="fa-solid fa-trophy trophy-icon" style="color: #ffd700;"></i>
-                    <h3>HackXcelerate 2K25</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Built the <strong>EduAI Platform</strong>, an intelligent learning system with AI-driven study plans and seamless Google service integration.</p>
-                    <a href="https://www.linkedin.com/posts/abhishek-babu-shetty_hackxcelereate2k25-activity-7302694514236739585-KP1h?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEDyaCkBZSkhKeKuNkw_eiFHEakNqTdtPhk" target="_blank" style="color: var(--primary-color); font-size: 0.9rem; margin-top: 5px; display: inline-block;">View Post</a>
-                </div>
-
-                <!-- Synergia 2K25 -->
-                <div class="glass-card achievement-card">
-                    <i class="fa-solid fa-trophy trophy-icon" style="color: #C0C0C0;"></i>
-                    <h3>Synergia 2K25 - 1st Place</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Presented an idea for an AI-based Operating System that automates everything.</p>
-                    <a href="https://www.linkedin.com/posts/abhishek-babu-shetty_synergia2k25-euphoriacompetition-ai-activity-7305986625384132608-DdVB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEDyaCkBZSkhKeKuNkw_eiFHEakNqTdtPhk" target="_blank" style="color: var(--primary-color); font-size: 0.9rem; margin-top: 5px; display: inline-block;">View Post</a>
-                </div>
-
-                <!-- Brilliant Bharath Hackathon -->
-                <div class="glass-card achievement-card">
-                    <i class="fa-solid fa-award trophy-icon" style="color: #cd7f32;"></i>
-                    <h3>Brilliant Bharath Hackathon</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Developed an <strong>AI-powered Employee Management & Upskilling Platform</strong> that recommends personalized learning paths from project tech stacks.</p>
-                    <a href="https://www.linkedin.com/posts/abhishek-babu-shetty_buildingbeyondcode-hackathonsuccess-brilliantbharathhackathon2k25-activity-7304190690261929984-zIX4?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEDyaCkBZSkhKeKuNkw_eiFHEakNqTdtPhk" target="_blank" style="color: var(--primary-color); font-size: 0.9rem; margin-top: 5px; display: inline-block;">View Post</a>
-                </div>
-
-                <!-- InnovArc '25 -->
-                <div class="glass-card achievement-card">
-                    <i class="fa-solid fa-medal trophy-icon" style="color: var(--primary-color);"></i>
-                    <h3>InnovArc '25 - 2nd Prize</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Built an AI platform for auto-annotation and saving images in YOLO/COCO formats.</p>
-                    <a href="https://www.linkedin.com/posts/abhishek-babu-shetty_innovarc25-hackathon-innovation-activity-7300935502784786433-I6qE?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEDyaCkBZSkhKeKuNkw_eiFHEakNqTdtPhk" target="_blank" style="color: var(--primary-color); font-size: 0.9rem; margin-top: 5px; display: inline-block;">View Post</a>
-                </div>
-            </div>
+        <div class="edu__score"><b data-count="96.3" data-decimals="1" data-suffix="%">0</b><span class="mono">Score</span></div>
+      </div>
+      <div class="edu__row" data-reveal>
+        <span class="edu__year mono">2020</span>
+        <div class="edu__what">
+          <h3>Secondary School</h3>
+          <p>Class X · Telangana State Board · Perfect score</p>
+          <span class="mono">Krishnaveni Talent School</span>
         </div>
-    </section>
+        <div class="edu__score"><b data-count="10" data-decimals="1">0</b><span class="mono">CGPA</span></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-text">
-                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                </p>
-                
-                <div class="contact-details" style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center;">
-                    <a href="mailto:abhishetty1506@gmail.com" class="contact-item" style="color: #fff; text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; transition: color 0.3s;">
-                        <i class="fa-solid fa-envelope" style="color: var(--primary-color);"></i> abhishetty1506@gmail.com
-                    </a>
-                    <a href="tel:9030633137" class="contact-item" style="color: #fff; text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; transition: color 0.3s;">
-                        <i class="fa-solid fa-phone" style="color: var(--primary-color);"></i> +91 9030633137
-                    </a>
-                    <div class="contact-item" style="color: #fff; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
-                        <i class="fa-solid fa-location-dot" style="color: var(--primary-color);"></i> Hyderabad, India
-                    </div>
-                </div>
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact" data-section="Contact" data-shape="hello">
+    <div class="sec-label mono" data-reveal><span>(09)</span> Contact — open channel</div>
+    <h2 class="contact__title" data-title>Let's build something <em class="serif">intelligent</em>.</h2>
 
-                <div class="social-links">
-                    <a href="https://github.com/abhishekbabushetty" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/abhishek-babu-shetty/" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
+    <div class="contact__grid">
+      <a href="mailto:abhishetty1506@gmail.com" class="contact__orb" data-magnetic="0.45" data-cursor="Write">
+        <span class="contact__orb-inner"><span>Say</span><span>hello</span><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <div class="contact__lines">
+        <p class="contact__lede" data-reveal>I'm open to new opportunities. Whether you have a question, a wild idea, or just want to say hi — my inbox is always on.</p>
+        <div class="contact__row" data-reveal>
+          <span class="mono">Email</span>
+          <a href="mailto:abhishetty1506@gmail.com">abhishetty1506@gmail.com</a>
+          <button class="copy mono" data-copy="abhishetty1506@gmail.com">copy</button>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>Designed & Built by Abhishek B Shetty</p>
+        <div class="contact__row" data-reveal>
+          <span class="mono">Phone</span>
+          <a href="tel:+919030633137">+91 90306 33137</a>
         </div>
+        <div class="contact__row" data-reveal>
+          <span class="mono">Based in</span>
+          <span>Hyderabad, India <small class="mono">IST · <span id="istTime">--:--</span></small></span>
+        </div>
+        <div class="contact__social" data-reveal>
+          <a href="https://github.com/abhishekbabushetty" target="_blank" rel="noopener" data-magnetic><i class="fa-brands fa-github"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/abhishek-babu-shetty/" target="_blank" rel="noopener" data-magnetic><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="foot mono">
+      <span>© 2026 Abhishek Babu Shetty — designed &amp; engineered by hand</span>
+      <span class="foot__egg hide-sm">psst: try ↑ ↑ ↓ ↓ ← → ← → B A</span>
+      <a href="#hero">Back to top ↑</a>
     </footer>
+  </section>
+</main>
 
-    <script src="script.js"></script>
+<!-- ============ AGENT CONSOLE ============ -->
+<div class="agent" id="agent" role="dialog" aria-modal="true" aria-labelledby="agentTitle" aria-hidden="true">
+  <div class="agent__backdrop" data-agent-close></div>
+  <div class="agent__panel">
+    <div class="agent__head">
+      <div class="agent__id">
+        <span class="agent__orb"><i></i></span>
+        <div>
+          <strong id="agentTitle">abhi.agent</strong>
+          <span class="mono">local intent agent · runs entirely in your browser</span>
+        </div>
+      </div>
+      <button class="agent__close mono" data-agent-close aria-label="Close agent">esc</button>
+    </div>
+    <div class="agent__log" id="agentLog" aria-live="polite"></div>
+    <div class="agent__chips" id="agentChips"></div>
+    <form class="agent__form" id="agentForm" autocomplete="off">
+      <span class="mono agent__prompt">›</span>
+      <input id="agentInput" type="text" placeholder="Ask about projects, stack, wins, hiring…" aria-label="Ask the agent">
+      <button type="submit" class="mono" aria-label="Send">↵</button>
+    </form>
+  </div>
+</div>
+
+<div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/particles.js?v=37"></script>
+<script src="js/labs.js?v=37"></script>
+<script src="js/graph.js?v=37"></script>
+<script src="js/agent.js?v=37"></script>
+<script src="js/sound.js?v=37"></script>
+<script src="js/core.js?v=37"></script>
 </body>
 </html>
